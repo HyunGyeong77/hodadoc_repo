@@ -1,0 +1,81 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 150px;
+  border-bottom: 1px solid #00CC66;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  padding-top: 0.5rem;
+}
+.header > div > .top {
+  display: flex;
+  justify-content: space-between;
+}
+.header > div > .top > .search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header > div > .top > .search > label, .header > div > .top > .search > input, .header > div > .top > .search > button {
+  height: 3.3rem;
+}
+.header > div > .top > .search > label {
+  width: 39.3rem;
+  background: white;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+.header > div > .top > .search > input {
+  position: absolute;
+  width: 35.5rem;
+  background: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding-left: 2rem;
+  font-size: 1.3rem;
+  line-height: 5;
+}
+.header > div > .top > .search > button {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.8rem;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: none;
+  border: none;
+}
+.header > div > .top > .search > button:hover {
+  cursor: pointer;
+}
+.header > div > .top > .login {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+}
+.header > div > .btm > ul {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  transform: translateX(-1.5rem);
+}
+.header > div > .btm > ul > li {
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+.header > div > .btm > ul > li > a:hover {
+  font-weight: bold;
+}
