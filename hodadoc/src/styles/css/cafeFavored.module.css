@@ -1,0 +1,44 @@
+.wrap {
+  background: #F3F3F3;
+  padding: 1.8rem 2rem;
+  border-radius: 10px;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.wrap > div {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap > div > div {
+  display: flex;
+  gap: 3rem;
+  width: 85%;
+  font-size: 1.2rem;
+}
+.wrap > div > div > p {
+  position: relative;
+  opacity: 60%;
+}
+.wrap > div > div > p::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1.5rem;
+  display: block;
+  width: 1px;
+  height: 1.4rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+.wrap > div > div > nav {
+  width: -moz-max-content;
+  width: max-content;
+  overflow: hidden;
+}
+.wrap > div > div > nav > ul > li > a > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap > div > a {
+  font-size: 1rem;
+}

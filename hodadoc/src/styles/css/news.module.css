@@ -1,0 +1,50 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  height: 100%;
+  background: #00AD56;
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.wrap > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.wrap > div > h2 {
+  font-size: 2rem;
+}
+.wrap > div > a > img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.wrap > nav {
+  overflow: hidden;
+}
+.wrap > nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.wrap > nav > ul > li {
+  display: flex;
+  gap: 0.5rem;
+}
+.wrap > nav > ul > li > a {
+  overflow: hidden;
+}
+.wrap > nav > ul > li > a:hover > p {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.wrap > nav > ul > li > a > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}

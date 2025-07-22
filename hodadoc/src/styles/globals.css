@@ -41,19 +41,36 @@ li {
   list-style:none;
 }
 
+button {
+  background:none;
+  border:none;
+}
+
+button:hover {
+  cursor:pointer;
+}
+
 .main-section-inner {
   position:relative;
 }
 
 .container {
-  padding: 0 10rem;
+  padding: 0 3rem;
   width:100%;
+}
+
+.layout {
+  width:80%;
   margin:0 auto;
 }
 
-@media (max-width: 1215px) {
+@media (max-width: 235px) {
   .container {
-    width:1215px;
+    padding:0;
+  }
+
+  .layout {
+    width:100%;
   }
 }
 

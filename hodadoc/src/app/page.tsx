@@ -1,4 +1,5 @@
 import {Metadata} from 'next';
+import Hero from '@sections/Hero';
 
 export const metadata: Metadata = {
   title: "HODADOC",
@@ -8,12 +9,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      {/* <main>
-
+      <main>
+        <Hero />
       </main>
       <footer>
 
-      </footer> */}
+      </footer>
     </div>
   );
 }

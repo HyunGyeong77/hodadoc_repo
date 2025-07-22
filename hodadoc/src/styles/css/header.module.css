@@ -5,33 +5,39 @@
   border-bottom: 1px solid #00CC66;
   box-sizing: border-box;
   overflow: hidden;
+  background: white;
+  z-index: 100;
 }
 .header > div {
+  height: 100%;
+}
+.header > div > div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   height: 100%;
-  padding-top: 0.5rem;
 }
-.header > div > .top {
+.header > div > div > .top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.header > div > .top > .search {
+.header > div > div > .top > .search {
   position: relative;
   display: flex;
   align-items: center;
 }
-.header > div > .top > .search > label, .header > div > .top > .search > input, .header > div > .top > .search > button {
+.header > div > div > .top > .search > label, .header > div > div > .top > .search > input, .header > div > div > .top > .search > button {
   height: 3.3rem;
 }
-.header > div > .top > .search > label {
+.header > div > div > .top > .search > label {
   width: 39.3rem;
   background: white;
   border-radius: 50px;
   border: 1px solid black;
 }
-.header > div > .top > .search > input {
+.header > div > div > .top > .search > input {
   position: absolute;
   width: 35.5rem;
   background: none;
@@ -44,7 +50,7 @@
   font-size: 1.3rem;
   line-height: 5;
 }
-.header > div > .top > .search > button {
+.header > div > div > .top > .search > button {
   position: absolute;
   right: 0;
   display: flex;
@@ -53,29 +59,61 @@
   width: 3.8rem;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  background: none;
-  border: none;
 }
-.header > div > .top > .search > button:hover {
-  cursor: pointer;
-}
-.header > div > .top > .login {
+.header > div > div > .top > .login {
   display: flex;
   justify-content: right;
   align-items: center;
   gap: 2rem;
   white-space: nowrap;
 }
-.header > div > .btm > ul {
+.header > div > div > .top > .menu {
+  height: -moz-max-content;
+  height: max-content;
+  border: none;
+}
+.header > div > div > .top > .menu > img {
+  width: 1.5rem;
+  height: 1.2rem;
+}
+.header > div > div > .btm > ul {
   display: flex;
   justify-content: center;
   gap: 5rem;
   transform: translateX(-1.5rem);
 }
-.header > div > .btm > ul > li {
+.header > div > div > .btm > ul > li {
   font-size: 1.3rem;
   white-space: nowrap;
 }
-.header > div > .btm > ul > li > a:hover {
+.header > div > div > .btm > ul > li > a:hover {
   font-weight: bold;
+}
+
+@media (min-width: 1171px) {
+  .header > div > div > .top > .menu {
+    display: none;
+  }
+}
+@media (max-width: 1170px) {
+  .header {
+    height: 100px;
+  }
+  .header > div > div > .top > .search > label {
+    width: 25rem;
+  }
+  .header > div > div > .top > .search > input {
+    width: 22rem;
+  }
+  .header > div > div > .top > .search > button {
+    width: 3rem;
+  }
+  .header > div > div > .top > .login, .header > div > div > .btm {
+    display: none;
+  }
+}
+@media (max-width: 770px) {
+  .header > div > div > .top > .search {
+    display: none;
+  }
 }
