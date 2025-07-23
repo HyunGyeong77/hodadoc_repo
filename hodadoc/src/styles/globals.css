@@ -60,6 +60,7 @@ button:hover {
 }
 
 .layout {
+  padding-block:3rem;
   width:80%;
   margin:0 auto;
 }

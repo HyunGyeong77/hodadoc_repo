@@ -11,6 +11,7 @@
   border-radius: 50%;
   width: 3.3rem;
   height: 3.3rem;
+  z-index: 1;
 }
 .wrap > button:first-child {
   left: 10%;
@@ -18,18 +19,42 @@
 .wrap > button:nth-child(2) {
   right: 10%;
 }
-.wrap > button > img {
+.wrap > button > .arrowIcon {
   width: 100%;
   height: 100%;
+  opacity: 0.6;
 }
-.wrap > nav {
+.wrap > button > .arrowIcon:hover {
+  opacity: 1;
+}
+.wrap > .btns {
+  position: absolute;
+  bottom: 1rem;
+  left: 45%;
+  z-index: 1;
+}
+.wrap > .btns > ul {
+  display: flex;
+  gap: 1rem;
+}
+.wrap > .btns > ul > li {
+  display: flex;
+}
+.wrap > .btns > ul > li > button > .btnIcon {
+  font-size: 1.2rem;
+}
+.wrap > .imgs {
   width: 100%;
   height: 300px;
 }
-.wrap > nav > ul {
+.wrap > .imgs > ul {
   display: flex;
+  --translateX:-100%;
+  transform: translateX(var(--translateX));
+  --transition:1s;
+  transition: transform var(--transition);
 }
-.wrap > nav > ul > li > a > img {
+.wrap > .imgs > ul > li > a > img {
   --width: 0;
   width: var(--width);
   height: 300px;

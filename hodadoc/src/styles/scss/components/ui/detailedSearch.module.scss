@@ -1,0 +1,162 @@
+@use '../../variables' as *;
+
+.wrap {
+    background:$light-green;
+    padding-inline:10%;
+    padding-block:2rem;
+    border:1px solid $black;
+    border-radius:40px;
+    color: $white;
+    white-space:nowrap;
+
+    & > h2 {
+        text-align:center;
+        font-size:2rem;
+    }
+   
+    & > .top {
+        display:flex;
+        padding-block:3rem;
+        gap:50px;
+
+        & > .left,
+        & > .right {
+            display:flex;
+            flex-direction:column;
+        }
+
+        & > .left > div > div > p,
+        & > .left > div > label,
+        & > .right > div > p {
+            font-size:1.8rem;
+            cursor:default;
+        }
+
+        & > .left {
+            flex:1;
+            gap:5rem;
+
+            & > div {
+                display:flex;
+                gap:2.5rem;
+                
+                &:first-child {
+                    & > div {
+                        display:flex;
+                        gap:1rem;
+                        width:100%;
+
+                        & > article {
+                            position:relative;
+                            flex:1;
+
+                            & > button {
+                                width:100%;
+                                height:2rem;
+                                border-bottom:1px solid $white;
+                            }
+
+                            & > nav {
+                                position:absolute;
+                                top:3rem;
+                                padding:1rem;
+                                background:rgb(233, 233, 233);
+                                width:100%;
+                                border-radius:30px;
+
+                                & > ul {
+                                    color:$black;
+                                    height:200px;
+                                    overflow-y:auto;
+
+                                    & > li {
+                                        &:first-child > p {
+                                            margin-top:0;
+                                        }
+
+                                        & > p {
+                                            cursor:default;
+                                            margin-bottom:0.5rem;
+                                            margin-top:1rem;
+                                            font-weight:bold;
+                                        }
+
+                                        & > button {
+                                            margin-bottom:0.5rem;
+
+                                            &:hover {
+                                                font-weight:700;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                & > ul::-webkit-scrollbar {
+                                    width:7px;
+                                }
+                                
+                                & > ul::-webkit-scrollbar-thumb {
+                                    height:30%;
+                                    background:$gray;
+                                    border-radius:10px;
+                                }
+                                
+                                & > ul::-webkit-scrollbar-track {
+                                    background: none;
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    gap:1.5rem;
+
+                    & > input {
+                        flex:1;
+                        background:none;
+                        border:none;
+                        outline:none;
+                        color:$white;
+                        border-bottom:1px solid $white;
+                        font-size:1.2rem;
+                    }
+                }
+            }
+        }
+
+        & > .right {
+            flex:0.7;
+            gap:3rem;
+
+            & > div {
+                display:flex;
+                gap:3rem;
+
+                & > ul {
+                    display:flex;
+                    gap:4rem;
+                    align-items:flex-end;
+
+                    & > li > button {
+                        font-family: 'MaplestoryOTFLight', sans-serif;
+                        font-size:1.2rem;
+                        color:$white;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .btm {
+        & > button {
+            width:100%;
+            height:3.5rem;
+            border-radius:50px;
+            background:$white;
+            font-size:1.2rem;
+            font-weight:700;
+        }
+    }     
+}

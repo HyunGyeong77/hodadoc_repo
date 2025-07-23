@@ -1,0 +1,125 @@
+.wrap {
+  background: #00CC66;
+  padding-inline: 10%;
+  padding-block: 2rem;
+  border: 1px solid black;
+  border-radius: 40px;
+  color: white;
+  white-space: nowrap;
+}
+.wrap > h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.wrap > .top {
+  display: flex;
+  padding-block: 3rem;
+  gap: 50px;
+}
+.wrap > .top > .left, .wrap > .top > .right {
+  display: flex;
+  flex-direction: column;
+}
+.wrap > .top > .left > div > div > p, .wrap > .top > .left > div > label, .wrap > .top > .right > div > p {
+  font-size: 1.8rem;
+  cursor: default;
+}
+.wrap > .top > .left {
+  flex: 1;
+  gap: 5rem;
+}
+.wrap > .top > .left > div {
+  display: flex;
+  gap: 2.5rem;
+}
+.wrap > .top > .left > div:first-child > div {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.wrap > .top > .left > div:first-child > div > article {
+  position: relative;
+  flex: 1;
+}
+.wrap > .top > .left > div:first-child > div > article > button {
+  width: 100%;
+  height: 2rem;
+  border-bottom: 1px solid white;
+}
+.wrap > .top > .left > div:first-child > div > article > nav {
+  position: absolute;
+  top: 3rem;
+  padding: 1rem;
+  background: rgb(233, 233, 233);
+  width: 100%;
+  border-radius: 30px;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul {
+  color: black;
+  height: 200px;
+  overflow-y: auto;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul > li:first-child > p {
+  margin-top: 0;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul > li > p {
+  cursor: default;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul > li > button {
+  margin-bottom: 0.5rem;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul > li > button:hover {
+  font-weight: 700;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar {
+  width: 7px;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: #A1A1A1;
+  border-radius: 10px;
+}
+.wrap > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar-track {
+  background: none;
+}
+.wrap > .top > .left > div:last-child {
+  gap: 1.5rem;
+}
+.wrap > .top > .left > div:last-child > input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  border-bottom: 1px solid white;
+  font-size: 1.2rem;
+}
+.wrap > .top > .right {
+  flex: 0.7;
+  gap: 3rem;
+}
+.wrap > .top > .right > div {
+  display: flex;
+  gap: 3rem;
+}
+.wrap > .top > .right > div > ul {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+}
+.wrap > .top > .right > div > ul > li > button {
+  font-family: "MaplestoryOTFLight", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+}
+.wrap > .btm > button {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 50px;
+  background: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}

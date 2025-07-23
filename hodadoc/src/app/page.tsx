@@ -1,5 +1,6 @@
 import {Metadata} from 'next';
 import Hero from '@sections/Hero';
+import Search from '@sections/Search';
 
 export const metadata: Metadata = {
   title: "HODADOC",
@@ -11,6 +12,7 @@ export default function Home() {
     <div>
       <main>
         <Hero />
+        <Search />
       </main>
       <footer>
 
