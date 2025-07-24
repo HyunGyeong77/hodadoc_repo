@@ -78,6 +78,12 @@ export const text = {
         }
     },
     field: "전문 분야",
+    fields: [
+        "전체", "내과", "외과", "소아과", "산부인과",
+        "정신건강과", "피부과", "안과", "이비인후과",
+        "재활의학과", "응급의학과", "마취과", "혈액학과",
+        "종양학과", "알레르기 및 면역학과"
+    ],
     name: "병원 이름",
     time: {
         title: "진료 시간",
@@ -86,11 +92,38 @@ export const text = {
     day: {
         title: "진료 요일",
         content: ["무관", "평일", "주말"],
+        id: ["day_default", "day_weekday", "day_weekend"],
         other: "휴무인 병원은 보고 싶지 않아요"
     },
     reservation: {
         title: "예약 시스템",
-        content: ["무관", "있음", "없음"]
+        content: ["무관", "있음", "없음"],
+        id: ["reser_default", "reser_yes", "reser_no"]
     },
-    search: "검색하기"
+    search: "검색하기",
+    sticky: {
+        title: `제일 많이 찾고 있는\n병원 순위 Top5`,
+        content: {
+            first: {
+                title: "1위",
+                content: "이런병원"
+            },
+            second: {
+                title: "2위",
+                content: "저런병원"
+            }, 
+            three: {
+                title: "3위",
+                content: "그런병원"
+            },
+            four: {
+                title: "4위",
+                content: "요런병원"
+            },
+            five: {
+                title: "5위",
+                content: "조런병원"
+            }
+        }
+    }
 }

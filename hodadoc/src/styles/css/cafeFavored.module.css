@@ -31,9 +31,18 @@
   background: rgba(0, 0, 0, 0.1);
 }
 .wrap > div > div > nav {
+  height: 20px;
+  overflow: hidden;
+}
+.wrap > div > div > nav > ul {
+  --translateY:0;
+  transform: translateY(var(--translateY));
+  --transition:0.5s;
+  transition: transform var(--transition);
+}
+.wrap > div > div > nav > ul > li {
   width: -moz-max-content;
   width: max-content;
-  overflow: hidden;
 }
 .wrap > div > div > nav > ul > li > a > p {
   overflow: hidden;

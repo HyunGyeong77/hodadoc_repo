@@ -1,162 +1,332 @@
 @use '../../variables' as *;
 
 .wrap {
-    background:$light-green;
-    padding-inline:10%;
-    padding-block:2rem;
-    border:1px solid $black;
-    border-radius:40px;
-    color: $white;
-    white-space:nowrap;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:3rem;
 
-    & > h2 {
-        text-align:center;
-        font-size:2rem;
-    }
-   
-    & > .top {
-        display:flex;
-        padding-block:3rem;
-        gap:50px;
+    & > .sticky {
+        position:absolute;
+        right:-10vw;
+        width:10%;
+        height:100%;
 
-        & > .left,
-        & > .right {
+        & > div {
+            position:sticky;
+            top:200px;
             display:flex;
             flex-direction:column;
-        }
+            gap:1rem;
+            width:100%;
+            height:200px;
+            padding:1rem;
+            background:$light-gray;
+            border:1px solid $black;
+            border-radius:20px;
 
-        & > .left > div > div > p,
-        & > .left > div > label,
-        & > .right > div > p {
-            font-size:1.8rem;
-            cursor:default;
-        }
-
-        & > .left {
-            flex:1;
-            gap:5rem;
-
-            & > div {
+            & > p {
+                font-size:0.9rem;
+                white-space:pre;
+                text-align:center;
+            }
+            
+            & > ul {
                 display:flex;
-                gap:2.5rem;
-                
-                &:first-child {
-                    & > div {
-                        display:flex;
-                        gap:1rem;
-                        width:100%;
+                flex-direction:column;
+                gap:0.3rem;
 
-                        & > article {
-                            position:relative;
-                            flex:1;
+                & > li {
+                    display:flex;
+                    justify-content:space-between;
+                    font-weight:bold;
 
-                            & > button {
-                                width:100%;
+                    &:first-child {
+                        color:red;
+
+                        & > span {
+                            color:$black;
+                        }
+                    }
+
+                    & > span {
+                        font-weight:lighter;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .search {
+        background:$light-green;
+        padding-inline:10%;
+        padding-block:2rem;
+        border:1px solid $black;
+        border-radius:40px;
+        color: $white;
+        white-space:nowrap;
+    
+        & > h2 {
+            text-align:center;
+            font-size:2rem;
+        }
+       
+        & > .top {
+            display:flex;
+            padding-block:3rem;
+            gap:50px;
+    
+            & > .left,
+            & > .right {
+                display:flex;
+                flex-direction:column;
+            }
+    
+            & > .left > div > div > p,
+            & > .left > div > label,
+            & > .right > div > p {
+                font-size:1.8rem;
+                cursor:default;
+            }
+    
+            & > .left {
+                flex:1;
+                gap:7rem;
+    
+                & > div {
+                    display:flex;
+                    
+                    &:first-child {
+                        & > div {
+                            display:flex;
+                            width:100%;
+                            gap:1rem;
+    
+                            &:first-child > article {
+                                width:150px;
+    
+                                & > nav {border-radius:25px;}
+                            }
+    
+                            &:last-child > article {
+                                width:200px;
+    
+                                & > nav {border-radius:30px;}
+                            }
+    
+                            & > article {
+                                position:relative;
+                                max-width:200px;
                                 height:2rem;
                                 border-bottom:1px solid $white;
-                            }
-
-                            & > nav {
-                                position:absolute;
-                                top:3rem;
-                                padding:1rem;
-                                background:rgb(233, 233, 233);
-                                width:100%;
-                                border-radius:30px;
-
-                                & > ul {
-                                    color:$black;
-                                    height:200px;
-                                    overflow-y:auto;
-
-                                    & > li {
-                                        &:first-child > p {
-                                            margin-top:0;
-                                        }
-
-                                        & > p {
-                                            cursor:default;
-                                            margin-bottom:0.5rem;
-                                            margin-top:1rem;
-                                            font-weight:bold;
-                                        }
-
-                                        & > button {
-                                            margin-bottom:0.5rem;
-
-                                            &:hover {
-                                                font-weight:700;
+    
+                                & > button {
+                                    display:flex;
+                                    align-items:center;
+                                    width:100%;
+                                    height:100%;
+    
+                                    & > span {
+                                        width:90%;
+                                        font-size:1.2rem;
+                                        color:$light-gray2;
+                                        font-weight:bold;
+                                        text-align:center;
+                                        overflow:hidden;
+                                        text-overflow:ellipsis;
+                                    }
+    
+                                    & > .downArrow {                
+                                        font-size:1.5rem;
+                                        color:$white;
+                                    }
+                                }
+    
+                                & > nav {
+                                    position:absolute;
+                                    top:2rem;
+                                    padding:1rem;
+                                    background:rgb(233, 233, 233);
+                                    width:100%;
+                                    opacity:0;
+                                    visibility:hidden;
+                                    transition: opacity 0.3s, top 0.3s, visibility 0s 0.3s;
+    
+                                    &.active {
+                                        opacity:1;
+                                        visibility:visible;
+                                        top:3rem;
+                                        transition: opacity 0.3s, top 0.3s, visibility 0s 0s;
+                                    }
+    
+                                    & > ul {
+                                        color:$black;
+                                        height:200px;
+                                        overflow-y:auto;
+                                        overflow-x:hidden;
+    
+                                        & > li {
+                                            &:first-child > p {
+                                                margin-top:0;
+                                            }
+    
+                                            & > p {
+                                                cursor:default;
+                                                margin-bottom:0.5rem;
+                                                margin-top:1rem;
+                                                font-weight:bold;
+                                            }
+    
+                                            & > button {
+                                                margin-bottom:0.5rem;
+    
+                                                &:hover {
+                                                    font-weight:700;
+                                                }
                                             }
                                         }
                                     }
+    
+                                    & > ul::-webkit-scrollbar {
+                                        width:7px;
+                                    }
+                                    
+                                    & > ul::-webkit-scrollbar-thumb {
+                                        height:30%;
+                                        background:$gray;
+                                        border-radius:10px;
+                                    }
+                                    
+                                    & > ul::-webkit-scrollbar-track {
+                                        background: none;
+                                    }
+                                    
                                 }
-
-                                & > ul::-webkit-scrollbar {
-                                    width:7px;
-                                }
-                                
-                                & > ul::-webkit-scrollbar-thumb {
-                                    height:30%;
-                                    background:$gray;
-                                    border-radius:10px;
-                                }
-                                
-                                & > ul::-webkit-scrollbar-track {
-                                    background: none;
-                                }
-                                
+                            }
+                        }
+                    }
+    
+                    &:last-child {
+                        gap:1.5rem;
+    
+                        & > input {
+                            flex:1;
+                            background:none;
+                            border:none;
+                            outline:none;
+                            color:$light-gray;
+                            border-bottom:1px solid $white;
+                            font-size:1.2rem;
+                        }
+                    }
+                }
+            }
+    
+            & > .right {
+                flex:0.8;
+                gap:3rem;
+    
+                & > div {
+                    display:flex;
+                    gap:3rem;
+    
+                    &:nth-child(2) {
+                        display:flex;
+                        align-items:center;
+    
+                        & > div {
+                            display:flex;
+                            flex-direction:column;
+                            gap:1rem;
+    
+                            & > ul > li > button,
+                            & > div > button {
+                                display:flex;
+                                gap:0.5rem;
+                                font-family: 'MaplestoryOTFLight', sans-serif;
+                                font-size:1.2rem;
+    
+                                &.active {color:$white;}
+                                &.inActive {color:$light-gray2;}
+                            }
+    
+                            & > ul {
+                                display:flex;
+                                gap:4rem;
+                            }
+    
+                            & > div {
+                                align-items:center;
+                            }
+                        }
+                    }
+    
+                    & > ul {
+                        display:flex;
+                        gap:4rem;
+                        align-items:flex-end;
+    
+                        & > li {           
+                            & > button {
+                                display:flex;
+                                gap:0.5rem;
+                                font-family: 'MaplestoryOTFLight', sans-serif;
+                                font-size:1.2rem;
+    
+                                &.active {color:$white;}
+                                &.inActive {color:$light-gray2;}
                             }
                         }
                     }
                 }
-
-                &:last-child {
-                    gap:1.5rem;
-
-                    & > input {
-                        flex:1;
-                        background:none;
-                        border:none;
-                        outline:none;
-                        color:$white;
-                        border-bottom:1px solid $white;
-                        font-size:1.2rem;
-                    }
-                }
             }
         }
+    
+        & > .btm {
+            & > button {
+                width:100%;
+                height:3.5rem;
+                border-radius:50px;
+                font-size:1.2rem;
+                font-weight:700;
+                background:$white;
 
-        & > .right {
-            flex:0.7;
-            gap:3rem;
+                &.active {
+                    color:$black;
+                    cursor:pointer;
+                }
 
-            & > div {
+                &.inActive {
+                    color:$light-gray2;
+                    cursor:default;
+                }
+            }
+        }     
+    }
+
+    & > .imgs {
+        & > ul {
+            display:grid;
+            grid-template-columns:repeat(auto-fill, minmax(210px, 1fr));
+            justify-items:center;
+            row-gap:3rem;
+
+            & > li {
                 display:flex;
-                gap:3rem;
+                flex-direction:column;
+                gap:0.3rem;
+                border:1px solid $black;
 
-                & > ul {
-                    display:flex;
-                    gap:4rem;
-                    align-items:flex-end;
-
-                    & > li > button {
-                        font-family: 'MaplestoryOTFLight', sans-serif;
-                        font-size:1.2rem;
-                        color:$white;
+                & > p {
+                    border-bottom:1px solid #111;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    
+                    & > span {
+                        color:$gray;
                     }
                 }
             }
         }
     }
-
-    & > .btm {
-        & > button {
-            width:100%;
-            height:3.5rem;
-            border-radius:50px;
-            background:$white;
-            font-size:1.2rem;
-            font-weight:700;
-        }
-    }     
 }
