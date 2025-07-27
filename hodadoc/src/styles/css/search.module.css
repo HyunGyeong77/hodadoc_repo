@@ -1,0 +1,318 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
+.wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.wrap > .sticky {
+  position: absolute;
+  right: -10vw;
+  width: 10%;
+  height: 100%;
+}
+.wrap > .sticky > div {
+  position: sticky;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  padding: clamp(0.3rem, 0.8vw, 1rem);
+  background: #F3F3F3;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.wrap > .sticky > div > p, .wrap > .sticky > div > ul > li > span {
+  font-size: clamp(0.4rem, 0.7vw, 0.9rem);
+}
+.wrap > .sticky > div > p {
+  white-space: pre;
+  text-align: center;
+}
+.wrap > .sticky > div > ul {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.9rem, 1vw, 1rem);
+}
+.wrap > .sticky > div > ul > li {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+.wrap > .sticky > div > ul > li:first-child > p {
+  color: red;
+}
+.wrap > .sticky > div > ul > li:first-child > span {
+  color: black;
+}
+.wrap > .sticky > div > ul > li > p {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+.wrap > .sticky > div > ul > li > span {
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap > .search {
+  background: #00CC66;
+  padding-block: 2rem;
+  border: 1px solid black;
+  border-radius: 40px;
+  color: white;
+  white-space: nowrap;
+}
+.wrap > .search > h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.wrap > .search > div {
+  width: 80%;
+  margin: 0 auto;
+}
+.wrap > .search > div > .top {
+  display: flex;
+  padding-block: 3rem;
+  gap: 50px;
+}
+.wrap > .search > div > .top > .left, .wrap > .search > div > .top > .right {
+  display: flex;
+  flex-direction: column;
+}
+.wrap > .search > div > .top > .left > div > div > p, .wrap > .search > div > .top > .left > div > label, .wrap > .search > div > .top > .right > div > p {
+  font-size: 1.8rem;
+  cursor: default;
+}
+.wrap > .search > div > .top > .left {
+  flex: 1;
+  gap: 7rem;
+}
+.wrap > .search > div > .top > .left > div {
+  display: flex;
+}
+.wrap > .search > div > .top > .left > div:first-child > div {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.wrap > .search > div > .top > .left > div:first-child > div:first-child > article {
+  width: 150px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div:first-child > article > nav {
+  border-radius: 25px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div:last-child > article {
+  width: 200px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div:last-child > article > nav {
+  border-radius: 30px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article {
+  position: relative;
+  max-width: 200px;
+  height: 2rem;
+  border-bottom: 1px solid white;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > button > span {
+  width: 90%;
+  font-size: 1.2rem;
+  color: #D5D5D5;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > button > .downArrow {
+  font-size: 1.5rem;
+  color: white;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav {
+  position: absolute;
+  top: 2rem;
+  padding: 1rem;
+  background: rgb(233, 233, 233);
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, top 0.3s, visibility 0s 0.3s;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav.active {
+  opacity: 1;
+  visibility: visible;
+  top: 3rem;
+  transition: opacity 0.3s, top 0.3s, visibility 0s 0s;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul {
+  color: black;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul > li:first-child > p {
+  margin-top: 0;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul > li > p {
+  cursor: default;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul > li > button {
+  margin-bottom: 0.5rem;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul > li > button:hover {
+  font-weight: 700;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar {
+  width: 7px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: #A1A1A1;
+  border-radius: 10px;
+}
+.wrap > .search > div > .top > .left > div:first-child > div > article > nav > ul::-webkit-scrollbar-track {
+  background: none;
+}
+.wrap > .search > div > .top > .left > div:last-child {
+  gap: 1.5rem;
+}
+.wrap > .search > div > .top > .left > div:last-child > input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #F3F3F3;
+  border-bottom: 1px solid white;
+  font-size: 1.2rem;
+}
+.wrap > .search > div > .top > .right {
+  flex: 0.8;
+  gap: 3rem;
+}
+.wrap > .search > div > .top > .right > div {
+  display: flex;
+  gap: 3rem;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div > ul > li > button, .wrap > .search > div > .top > .right > div:nth-child(2) > div > div > button {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "MaplestoryOTFLight", sans-serif;
+  font-size: 1.2rem;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div > ul > li > button.active, .wrap > .search > div > .top > .right > div:nth-child(2) > div > div > button.active {
+  color: white;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div > ul > li > button.inActive, .wrap > .search > div > .top > .right > div:nth-child(2) > div > div > button.inActive {
+  color: #D5D5D5;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div > ul {
+  display: flex;
+  gap: 4rem;
+}
+.wrap > .search > div > .top > .right > div:nth-child(2) > div > div {
+  align-items: center;
+}
+.wrap > .search > div > .top > .right > div > ul {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+}
+.wrap > .search > div > .top > .right > div > ul > li > button {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "MaplestoryOTFLight", sans-serif;
+  font-size: 1.2rem;
+}
+.wrap > .search > div > .top > .right > div > ul > li > button.active {
+  color: white;
+}
+.wrap > .search > div > .top > .right > div > ul > li > button.inActive {
+  color: #D5D5D5;
+}
+.wrap > .search > div > .btm > button {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: white;
+}
+.wrap > .search > div > .btm > button.active {
+  color: black;
+  cursor: pointer;
+}
+.wrap > .search > div > .btm > button.inActive {
+  color: #D5D5D5;
+  cursor: default;
+}
+.wrap > .imgs > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  justify-items: center;
+  row-gap: 3rem;
+}
+.wrap > .imgs > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border: 1px solid black;
+}
+.wrap > .imgs > ul > li > p {
+  border-bottom: 1px solid #111;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap > .imgs > ul > li > p > span {
+  color: #A1A1A1;
+}
+
+@media (max-width: 1870px) {
+  .wrap > .search > div {
+    width: 70%;
+  }
+  .wrap > .search > div > .top {
+    flex-direction: column;
+  }
+  .wrap > .search > div > .top > .left {
+    gap: 3rem;
+  }
+}
+@media (max-width: 1170px) {
+  .wrap > .sticky > div {
+    display: none;
+  }
+  .wrap > .search > div > .top > .left > div:first-child {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+@media (max-width: 930px) {
+  .wrap > .search > div > .top > .right > div:not(:first-child) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .wrap > .search > div > .top > .right > div:nth-child(2) {
+    align-items: unset;
+  }
+}

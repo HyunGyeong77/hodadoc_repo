@@ -1,0 +1,129 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.wrap {
+    display:flex;
+    flex-direction:column;
+    gap:3rem;
+
+    & > h2 {
+        font-size:3rem;
+
+        & > span {
+            &:first-child {
+                color:$light-green;
+            }
+        }
+    }
+
+    & > .btm {
+        display:grid;
+        grid-template-columns:230px 1fr;
+        gap:20px;
+
+        & > .left {
+            display:flex;
+            flex-direction:column;
+            gap:4rem;
+            border:1px solid $black;
+            border-radius:20px;
+            padding-block:2rem;
+            padding-inline:1.5rem;
+
+            & > div > div > p {
+                @include textDot(0.3rem, 0.3rem, 0.5rem);
+                font-weight:bold;
+                font-size:1.2rem;
+            }
+            
+            & > div {
+                display:flex;
+                flex-direction:column;
+                gap:2rem;
+
+                & > div:first-child {
+                    display:flex;
+                    flex-direction:column;
+                    gap:0.5rem;
+
+                    & > span {
+                        @include textDot(0.25rem, 0.25rem, 0.5rem);
+                        display:block;
+                        text-indent:20px;
+                        font-size:0.9rem;
+                        opacity:0.5;
+                    }
+                }
+
+                & > div:last-child {
+                    & > ul {
+                        &:nth-child(2) {
+                            margin-top:1rem;
+                        }
+
+                        &:last-child {
+                            margin-top:2rem;
+                        }
+
+                        & > li {
+                            margin-top:0.5rem;
+
+                            & > p {
+                                font-size:0.9rem;
+                                text-indent:0.8rem;
+                                opacity:0.9;
+
+                                &::before {
+                                    content:"- ";
+                                }
+                            }
+
+                            & > ul {
+                                display:flex;
+                                flex-direction:column;
+                                gap:0.2rem;
+                                margin-top:0.3rem;
+
+                                & > li {
+                                    @include textDot(0.25rem, 0.25rem, 0.5rem);
+                                    opacity:0.5;
+                                    text-indent:1.2rem;
+                                    font-size:0.9rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > p {
+                text-indent:1rem;
+                font-weight:bold;
+
+                & > span:last-child {
+                    color:red;
+                }
+            }
+        }
+
+        & > .right {
+            display:grid;
+            grid-template-columns:1fr 35%;
+            
+            & > div {
+                border:1px solid $black;
+            }
+
+            & > div:first-child {
+                border-right:none;
+                border-top-left-radius:20px;
+                border-bottom-left-radius:20px;
+            }
+
+            & > div:last-child {
+                border-top-right-radius:20px;
+                border-bottom-right-radius:20px;
+            }
+        }
+    }
+}

@@ -62,16 +62,13 @@ button:hover {
 .layout {
   padding-block:3rem;
   width:80%;
+  max-width:1500px;
   margin:0 auto;
 }
 
-@media (max-width: 235px) {
-  .container {
-    padding:0;
-  }
-
+@media (max-width: 770px) {
   .layout {
-    width:100%;
+    width:529px;
   }
 }
 

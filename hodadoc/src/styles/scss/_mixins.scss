@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+@mixin textDot($width, $height, $margin-right) {
+    &::before {
+        content:"";
+        display:inline-block;
+        width:$width;
+        height:$height;
+        border-radius:50%;
+        background:$black;
+        margin-right:$margin-right;
+    }
+}
