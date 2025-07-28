@@ -1,0 +1,59 @@
+.footer {
+  background: #EEEEEE;
+}
+.footer > div {
+  height: 150px;
+}
+.footer > div > div {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.3rem;
+  height: 100%;
+}
+.footer > div > div > .left, .footer > div > div > .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer > div > div > .left > .btm > ul, .footer > div > div > .right > .top {
+  display: flex;
+}
+.footer > div > div > .left > .top > h2 {
+  font-size: 1.7rem;
+}
+.footer > div > div > .left > .top > p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.footer > div > div > .left > .btm > ul {
+  gap: 1rem;
+}
+.footer > div > div > .left > .btm > ul > li {
+  font-size: 0.8rem;
+}
+.footer > div > div > .left > .btm > ul > li:nth-child(odd) > a {
+  opacity: 70%;
+}
+.footer > div > div > .left > .btm > ul > li:nth-child(2) > a {
+  font-weight: bold;
+}
+.footer > div > div > .right > .top {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color 0.2s;
+}
+.footer > div > div > .right > .top:hover {
+  color: #00AD56;
+}
+.footer > div > div > .right > .top > p {
+  font-size: 1.2rem;
+}
+.footer > div > div > .right > .top > .arrowUpIcon {
+  font-size: 2rem;
+}
+.footer > div > div > .right > .btm > span {
+  font-size: 0.8rem;
+  opacity: 80%;
+}

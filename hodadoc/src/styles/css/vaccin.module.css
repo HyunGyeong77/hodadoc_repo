@@ -1,0 +1,83 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
+.section > div > div {
+  padding-bottom: 0;
+}
+.section > div > div > .wrap {
+  display: grid;
+  grid-template-columns: 27vw 1fr;
+  align-items: end;
+  height: 500px;
+}
+.section > div > div > .wrap > img {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+.section > div > div > .wrap > img:nth-child(2) {
+  transform: translateY(-11rem);
+}
+.section > div > div > .wrap > .left, .section > div > div > .wrap > .right {
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
+.section > div > div > .wrap > .right {
+  width: 100%;
+}
+.section > div > div > .wrap > .right > ul {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+.section > div > div > .wrap > .right > ul > li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.section > div > div > .wrap > .right > ul > li > a > div {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-inline: 1.7vw;
+  padding-block: 1.2vw;
+}
+.section > div > div > .wrap > .right > ul > li > a > div > img {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 10px;
+}
+.section > div > div > .wrap > .right > ul > li > a > p {
+  white-space: nowrap;
+  font-size: 0.9vw;
+}
+
+@media (min-width: 2000px) {
+  .section > div > div > .wrap {
+    position: relative;
+    grid-template-columns: 25rem 1fr;
+  }
+  .section > div > div > .wrap > img:first-child {
+    width: 1500px;
+  }
+  .section > div > div > .wrap > .left {
+    transform: translateX(6rem);
+  }
+  .section > div > div > .wrap > .left > img {
+    width: 300px;
+    height: 100px;
+  }
+  .section > div > div > .wrap > .right > ul > li > a > div {
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+  }
+  .section > div > div > .wrap > .right > ul > li > a > div > img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .section > div > div > .wrap > .right > ul > li > a > p {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,106 @@
+@use '../../media' as *;
+@use '../../levels' as *;
+@use '../../variables' as *;
+
+.section {
+    & > div > div {
+        padding-bottom:0;
+
+        & > .wrap {
+            display:grid;
+            grid-template-columns:27vw 1fr;
+            align-items:end;
+            height:500px;
+            
+            & > img {
+                position:absolute;
+                right:0;
+                z-index:$index-back1;
+            }
+
+            & > img:nth-child(2) {
+                transform:translateY(-11rem);
+            }
+
+            & > .left,
+            & > .right {
+                display:flex;
+                align-items:center;
+                height:400px;
+            }
+
+            & > .right {
+                width:100%;
+                
+                & > ul {
+                    display:grid;
+                    grid-template-columns:repeat(6, 1fr);
+                    width:100%;
+
+                    & > li {
+                        & > a {
+                            display:flex;
+                            flex-direction:column;
+                            align-items:center;
+                            gap:1.5rem;
+
+                            & > div {
+                                border:1px solid $black;
+                                border-radius:20px;
+                                padding-inline:1.7vw;
+                                padding-block:1.2vw;
+
+                                & > img {
+                                    width:3vw;
+                                    height:3vw;
+                                    border-radius:10px;
+                                }
+                            }
+
+                            & > p {
+                                white-space:nowrap;
+                                font-size:0.9vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media_min_2000 {
+    .section > div > div > .wrap {
+        position:relative;
+        grid-template-columns:25rem 1fr;
+
+        & > img:first-child {
+            width:1500px;
+        }
+
+        & > .left {
+            transform:translateX(6rem);
+
+            & > img {
+                width:300px;
+                height:100px;
+            }
+        }
+
+        & > .right > ul > li > a {
+            & > div {
+                padding-inline:2rem;
+                padding-block:1.5rem;
+
+                & > img {
+                    width:3.5rem;
+                    height:3.5rem;
+                }
+            }
+
+            & > p {
+                font-size:1.1rem;
+            }
+        }
+    }
+}

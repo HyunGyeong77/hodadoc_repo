@@ -1,0 +1,78 @@
+.anno {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-block: 2rem;
+  padding-inline: 3rem;
+  border: 1px solid #8B8B8B;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.anno > .top, .anno > .top > div, .anno > .btm > ul > li > a {
+  display: flex;
+}
+.anno > .top {
+  justify-content: space-between;
+}
+.anno > .top > div {
+  align-items: flex-end;
+}
+.anno > .top > div > h2 {
+  opacity: 80%;
+  font-size: 2rem;
+}
+.anno > .top > div > .slashIcon, .anno > .top > div > p {
+  opacity: 50%;
+  color: black;
+}
+.anno > .top > div > .slashIcon {
+  font-size: 2.2rem;
+}
+.anno > .top > div > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  transform: translateY(-2px);
+}
+.anno > .top > button > .plusIcon {
+  font-size: 1.5rem;
+  opacity: 70%;
+  height: 100%;
+}
+.anno > .btm {
+  padding-top: 1.5rem;
+  border-top: 1px solid #BEBEBE;
+}
+.anno > .btm > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.anno > .btm > ul > li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.anno > .btm > ul > li::before {
+  content: "";
+  display: inline-block;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: black;
+  margin-right: 0.5rem;
+}
+.anno > .btm > ul > li > a {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  width: 98%;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.anno > .btm > ul > li > a > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.anno > .btm > ul > li > a > span:last-child {
+  opacity: 60%;
+}

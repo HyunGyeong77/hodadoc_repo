@@ -3,9 +3,13 @@
 /* max */
 /* //max */
 .wrap {
-  padding-top: 5rem;
+  padding-block: 5rem;
   display: grid;
-  grid-template-columns: 28vw 1fr;
+  grid-template-columns: 23vw 1fr;
+  gap: 3vw;
+}
+.wrap > .left {
+  height: 30vw;
 }
 .wrap > .left > img {
   position: absolute;
@@ -44,10 +48,12 @@
 
 @media (min-width: 2000px) {
   .wrap {
-    grid-template-columns: 700px 1fr;
+    grid-template-columns: 650px 1fr;
+    gap: 4rem;
   }
   .wrap > .left {
     position: relative;
+    height: 580px;
   }
   .wrap > .left > img {
     width: 650px;

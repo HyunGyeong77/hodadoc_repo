@@ -1,0 +1,87 @@
+@use '../../variables' as *;
+
+.footer {
+    background:#EEEEEE;
+
+    & > div {
+        height:150px;
+
+        & > div {
+            display:flex;
+            justify-content:space-between;
+            padding-block:1.3rem;
+            height:100%;
+    
+            & > .left,
+            & > .right {
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+            }
+    
+            & > .left > .btm > ul,
+            & > .right > .top {
+                display:flex;
+            }
+    
+            & > .left {
+                & > .top {
+
+                    & > h2 {
+                        font-size:1.7rem;
+                    }
+
+                    & > p {
+                        font-size:1rem;
+                        line-height:1.5;
+                    }
+                }
+
+                & > .btm {
+                    & > ul {
+                        gap:1rem;
+
+                        & > li {
+                            font-size:0.8rem;
+
+                            &:nth-child(odd) > a {
+                                opacity:70%;
+                            }
+
+                            &:nth-child(2) > a {
+                                font-weight:bold;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            & > .right {
+                & > .top {
+                    margin-left:auto;
+                    display:flex;
+                    align-items:center;
+                    gap:1rem;
+                    transition:color 0.2s;
+
+                    &:hover {
+                        color:$dark-green;
+                    }
+                    
+                    & > p {
+                        font-size:1.2rem;
+                    }
+
+                    & > .arrowUpIcon {
+                        font-size:2rem;
+                    }
+                }
+
+                & > .btm > span {
+                    font-size:0.8rem;
+                    opacity:80%;
+                }
+            }
+        }
+    }
+}

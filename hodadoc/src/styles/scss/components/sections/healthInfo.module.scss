@@ -1,12 +1,16 @@
 @use '../../variables' as *;
 @use '../../media' as *;
 
+
 .wrap {
-    padding-top:5rem;
+    padding-block:5rem;
     display:grid;
-    grid-template-columns: 28vw 1fr;
+    grid-template-columns: 23vw 1fr;
+    gap:3vw;
 
     & > .left {
+        height:30vw;
+
         & > img {
             position:absolute;
             left:0;
@@ -51,12 +55,15 @@
     }
 }
 
+
 @include media_min_2000 {
     .wrap {
-        grid-template-columns: 700px 1fr;
+        grid-template-columns: 650px 1fr;
+        gap:4rem;
 
         & > .left {
             position:relative;
+            height:580px;
 
             & > img {
                 width:650px;
