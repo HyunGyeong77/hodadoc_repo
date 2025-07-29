@@ -1,6 +1,17 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: 100%;
+}
+
+@media (max-width: 1145px) {
+  .wrap {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+  }
 }

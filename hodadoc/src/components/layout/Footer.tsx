@@ -1,3 +1,5 @@
+"use client";
+
 import styles from 'styles/css/footer.module.css';
 import {text} from 'services/footer';
 import Link from 'next/link';
@@ -5,6 +7,13 @@ import Link from 'next/link';
 import { FaArrowAltCircleUp as ArrowUpIcon } from "react-icons/fa";
 
 function Footer() {
+    const search_onClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const id_search = document.getElementById("search_section") as HTMLElement;
+        
+        id_search.scrollIntoView({behavior: "smooth"});
+    }
+
     return (
         <footer className={styles.footer}>
             <div className="container">
@@ -25,7 +34,7 @@ function Footer() {
                         </nav>
                     </div>
                     <div className={styles.right}>
-                        <a href="#" className={styles.top}>
+                        <a href="#search_section" onClick={search_onClick} className={styles.top}>
                             <p>{text.search}</p>
                             <ArrowUpIcon className={styles.arrowUpIcon} />
                         </a>

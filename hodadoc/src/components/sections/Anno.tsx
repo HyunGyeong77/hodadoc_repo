@@ -8,8 +8,8 @@ function Anno() {
             <div className="container">
                 <div className="layout" style={{display:"flex"}}>
                     <div className={styles.wrap}>
-                    <AnnoComp text={text.anno} />
-                    <AnnoComp text={text.bid} />
+                        <AnnoComp text={text.anno} />
+                        <AnnoComp text={text.bid} />
                     </div>
                 </div>
             </div>

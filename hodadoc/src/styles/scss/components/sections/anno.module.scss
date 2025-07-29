@@ -1,8 +1,15 @@
-
+@use '../../media' as *;
 
 .wrap {
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:1.5rem;
     width:100%;
+}
+
+@include media_max_1145 {
+    .wrap {
+        grid-template-columns:unset;
+        grid-template-rows:1fr 1fr;
+    }
 }

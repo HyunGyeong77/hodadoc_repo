@@ -5,7 +5,7 @@
 .wrap {
   padding-block: 5rem;
   display: grid;
-  grid-template-columns: 23vw 1fr;
+  grid-template-columns: 24vw 1fr;
   gap: 3vw;
 }
 .wrap > .left {
@@ -14,8 +14,8 @@
 .wrap > .left > img {
   position: absolute;
   left: 0;
-  height: 30vw;
   width: 35vw;
+  height: 30vw;
 }
 .wrap > .right > nav > ul {
   display: grid;
@@ -31,7 +31,7 @@
 .wrap > .right > nav > ul > li > a {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2vw;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -56,12 +56,16 @@
     height: 580px;
   }
   .wrap > .left > img {
+    left: 0;
     width: 650px;
-    height: 580px;
+    height: 100%;
   }
   .wrap > .right > nav > ul > li {
     width: 170px;
     height: 170px;
+  }
+  .wrap > .right > nav > ul > li > a {
+    gap: 2rem;
   }
   .wrap > .right > nav > ul > li > a > img {
     width: 50px;
@@ -69,5 +73,54 @@
   }
   .wrap > .right > nav > ul > li > a > p {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 1145px) {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap > .left {
+    height: 30vw;
+  }
+  .wrap > .left > img {
+    position: absolute;
+    left: 0;
+    width: 85.5vw;
+    height: 30vw;
+  }
+  .wrap > .right > nav > ul {
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    row-gap: 1rem;
+  }
+  .wrap > .right > nav > ul > li {
+    width: 180px;
+    height: 120px;
+  }
+  .wrap > .right > nav > ul > li > a {
+    gap: 1rem;
+  }
+  .wrap > .right > nav > ul > li > a > img {
+    width: 50px;
+    height: 50px;
+  }
+  .wrap > .right > nav > ul > li > a > p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 770px) {
+  .wrap {
+    padding-block: 0rem;
+    gap: 1.2rem;
+  }
+  .wrap > .left {
+    position: relative;
+    height: 231px;
+  }
+  .wrap > .left > img {
+    left: -8rem;
+    width: 658.35px;
+    height: 100%;
   }
 }

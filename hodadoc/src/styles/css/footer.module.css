@@ -1,3 +1,7 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .footer {
   background: #EEEEEE;
 }
@@ -56,4 +60,10 @@
 .footer > div > div > .right > .btm > span {
   font-size: 0.8rem;
   opacity: 80%;
+}
+
+@media (max-width: 620px) {
+  .footer {
+    width: 620px;
+  }
 }

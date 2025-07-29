@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Header() {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className="container">
                 <div className="layout">
                     <div className={styles.top}>
@@ -37,7 +37,7 @@ function Header() {
                     </nav>
                 </div>
             </div>
-        </div>
+        </header>
     );
 }
 

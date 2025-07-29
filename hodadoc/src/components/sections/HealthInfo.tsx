@@ -1,21 +1,43 @@
+"use client";
+
 import styles from 'styles/css/healthInfo.module.css';
 import {text} from 'services/healthInfo';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useState, useEffect} from 'react';
 
 function HealthInfo() {
+    const [isImgChange, setIsImgChange] = useState(false);
+
+    useEffect(() => {
+
+        const reSizeHandler = () => {
+            setIsImgChange(window.innerWidth > 1145 ? true : false);
+        }
+        
+        reSizeHandler();
+        window.addEventListener("resize", reSizeHandler);
+
+        return (() => {
+            window.removeEventListener("resize", reSizeHandler);
+        })
+    }, []);
+
     return (
         <section>
             <div className="container">
                 <div className="layout">
                     <div className={styles.wrap}>
                         <div className={styles.left}>
-                            <Image src="/images/healthInfo.png" alt="healthInfo" width={700} height={600}  />
+                            {isImgChange ?
+                                <Image src="/images/healthInfo.png" alt="healthInfo" width={700} height={600} /> :
+                                <Image src="/images/healthInfo2.png" alt="healthInfo2" width={1000} height={350} />
+                            }
                         </div>
                         <div className={styles.right}>
                             <nav>
                                 <ul>
-                                    {text.map((item, index) => (
+                                    {text.right.map((item, index) => (
                                         <li key={item + index}>
                                             <Link href="#">
                                                 <Image src={`https://picsum.photos/200/300?random=${index}`} alt="random_img" width={200} height={300} />

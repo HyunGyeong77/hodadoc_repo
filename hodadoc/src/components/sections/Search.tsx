@@ -22,13 +22,15 @@ function Search() {
     const [reserValue, setReserValue] = useState<string>("무관");
     /* //값 입력 */
     /* 값 전달 */
+    const [searchName, setSearchName] = useState<string>(text.name);
     const [searchRegion, setSearchRegion] = useState<string>(text.region);
     const [searchField, setSearchField] = useState<string>(text.field);
-    const [searchName, setSearchName] = useState<string>(text.name);
     const [searchTime, setSearchTime] = useState<string[]>([text.time.title]);
     const [searchDay, setSearchDay] = useState<string>(text.day.title);
     /* //값 전달 */
     const [isSearch, setIsSearch] = useState<boolean>(false);
+    const [moreText, setMoreText] = useState<string>("더보기");
+    const [moreNumber, setMoreNumber] = useState<number>(1);
 
     useEffect(() => {   // 메뉴 창 open 상태에서 다른 곳 클릭 시 창 close
        const clickHandler = (e: Event) => {
@@ -116,8 +118,21 @@ function Search() {
         setSearchDay(dayValue);
     }
 
+    const more_onClick = () => {
+        const moreList = document.querySelectorAll(".moreList") as NodeList;
+
+        moreList.forEach((item) => {
+            if(item instanceof HTMLLIElement) {
+                item.classList.toggle(styles.visible);
+            }
+        });
+
+        setMoreText(moreNumber === 1 ? "접기" : "더보기");
+        setMoreNumber(moreNumber === 1 ? 2 : 1);
+    }
+
     return (
-        <section>
+        <section id="search_section">
             <div className="container">
                 <div className="layout">
                     <div className={styles.wrap}>
@@ -250,17 +265,26 @@ function Search() {
                         <nav className={styles.imgs}>
                             <ul>
                                 {Array.from({ length: 12 }).map((_, index) => (
-                                    <li key={index}>
-                                        <Image src={`https://picsum.photos/200/300?random=${index}`} alt="random_img" width={200} height={300} />
-                                        <p>지역 : <span>({searchRegion})</span></p>
-                                        <p>전문 분야 : <span>({searchField})</span></p>
-                                        <p>병원 이름 : <span>({searchName})</span></p>
-                                        <p>진료 시간 : <span>({searchTime.join(", ")})</span></p>
-                                        <p>진료 요일 : <span>({searchDay})</span></p>
+                                    <li key={index} className={index > 5 ? "moreList" : ""}>
+                                        <Image src={`https://picsum.photos/400/180?random=${index}`} alt="random_img" width={400} height={180} />
+                                        <article>
+                                            <p>{searchName}</p>
+                                            <p>지역 : <span>{searchRegion}</span></p>
+                                            <p>전문 분야 : <span>{searchField}</span></p>
+                                            <p>진료 시간 : <span>{searchTime.join(", ")}</span></p>
+                                            <p>진료 요일 : <span>{searchDay}</span></p>
+                                        </article>
                                     </li>
                                 ))}
                             </ul>
                         </nav>
+                        <button className={styles.more} onClick={more_onClick}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            {moreText} <span>({moreNumber} / 2)</span>
+                        </button>
                     </div>
                 </div>
             </div>
