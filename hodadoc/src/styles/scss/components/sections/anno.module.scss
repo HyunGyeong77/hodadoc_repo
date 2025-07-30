@@ -1,10 +1,63 @@
 @use '../../media' as *;
+@use '../../mixins' as *;
+@use '../../animations' as *;
 
 .wrap {
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:1.5rem;
     width:100%;
+
+    & > div {
+        @include transparent;
+
+        & > div,
+        & > nav {
+            @include transparent;
+        }
+
+        & > div {
+            transform:translateY(-5px);
+        }
+
+        & > nav {
+            transform:translateY(-15px);
+        }
+    }
+
+    & > div.active {
+        & > div,
+        & > nav {
+            transform:translateY(0);
+            opacity:1;
+            visibility:visible;
+            transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+        }
+
+        &:first-child {
+            @include anim_up_down(-60px, 0.7s, 0);
+            
+            & > div {
+                transition-delay:0.3s;
+            }
+
+            & > nav {
+                transition-delay:0.5s;
+            }
+        }
+
+        &:last-child {
+            @include anim_up_down(-60px, 1s, 0.5s);
+            
+            & > div {
+                transition-delay:0.8s;
+            }
+
+            & > nav {
+                transition-delay:1s;
+            }
+        }
+    }
 }
 
 @include media_max_1145 {

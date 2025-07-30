@@ -4,6 +4,7 @@ import styles from 'styles/css/search.module.css';
 import {text} from 'services/search';
 import React, {useState, useRef, useEffect} from 'react';
 import Image from 'next/image';
+import {animationObserver} from '@utils/animationObserver';
 
 import { MdKeyboardArrowDown as DownArrow } from "react-icons/md";
 import { FaSquareCheck as SquareCheckBox } from "react-icons/fa6";
@@ -31,6 +32,13 @@ function Search() {
     const [isSearch, setIsSearch] = useState<boolean>(false);
     const [moreText, setMoreText] = useState<string>("더보기");
     const [moreNumber, setMoreNumber] = useState<number>(1);
+
+    useEffect(() => {   // 애니메이션
+        const menus = document.querySelector(".imgs")?.querySelectorAll("li") as NodeList;
+        const menuArray = Array.from(menus) as HTMLElement[];
+
+        animationObserver(menuArray, styles);
+    }, []);
 
     useEffect(() => {   // 메뉴 창 open 상태에서 다른 곳 클릭 시 창 close
        const clickHandler = (e: Event) => {
@@ -62,7 +70,7 @@ function Search() {
         } else {
             setIsSearch(false);
         }
-    }, [regionValue, fieldValue, nameValue])
+    }, [regionValue, fieldValue, nameValue]);
 
     const menu_onClick = (ref: React.RefObject<HTMLElement | null>) => () => {
         ref.current?.classList.toggle(styles.active);
@@ -262,11 +270,13 @@ function Search() {
                                 </div>
                             </div>
                         </div>
-                        <nav className={styles.imgs}>
+                        <nav className={`${styles.imgs} imgs`}>
                             <ul>
                                 {Array.from({ length: 12 }).map((_, index) => (
                                     <li key={index} className={index > 5 ? "moreList" : ""}>
-                                        <Image src={`https://picsum.photos/400/180?random=${index}`} alt="random_img" width={400} height={180} />
+                                        <article>
+                                            <Image src={`https://picsum.photos/400/180?random=${index}`} alt="random_img" width={400} height={180} />
+                                        </article>
                                         <article>
                                             <p>{searchName}</p>
                                             <p>지역 : <span>{searchRegion}</span></p>

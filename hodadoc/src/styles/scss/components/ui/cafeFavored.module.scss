@@ -1,6 +1,8 @@
 @use '../../variables' as *;
+@use '../../animations' as *;
 
 .wrap {
+    @include anim_up_down(-60px, 1s, 0.3s);
     background:$light-gray;
     padding:1.8rem 2rem;
     border-radius:10px;

@@ -1,17 +1,45 @@
 .wrap {
+  animation: anim_up_down 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
   position: relative;
   border-radius: 20px;
   border: 2px solid #D5D5D5;
   box-sizing: border-box;
   overflow: hidden;
+  transform: translateY(-60px);
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 .wrap > button {
+  animation: anim_visible 1s ease forwards;
   position: absolute;
   top: 40%;
   border-radius: 50%;
   width: 3.3rem;
   height: 3.3rem;
   z-index: 1;
+}
+@keyframes anim_visible {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .wrap > button:first-child {
   left: 10%;
@@ -28,10 +56,21 @@
   opacity: 1;
 }
 .wrap > .btns {
+  animation: anim_visible 1s ease forwards;
   position: absolute;
   bottom: 1rem;
   left: 45%;
   z-index: 1;
+}
+@keyframes anim_visible {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .wrap > .btns > ul {
   display: flex;

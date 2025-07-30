@@ -13,16 +13,178 @@
 }
 .wrap > .left > img {
   position: absolute;
-  left: 0;
+  left: -100px;
   width: 35vw;
   height: 30vw;
+  opacity: 0;
+  visibility: visible;
+}
+.wrap > .left > img.active {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s, visibility 1s, left 1s;
 }
 .wrap > .right > nav > ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 4rem;
 }
+.wrap > .right > nav > ul.active > li {
+  --delay:0;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > .right > nav > ul.active > li:nth-child(2) {
+  --delay: 0.1s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(3) {
+  --delay: 0.2s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(4) {
+  --delay: 0.3s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(5) {
+  --delay: 0.4s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(6) {
+  --delay: 0.5s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(7) {
+  --delay: 0.6s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.wrap > .right > nav > ul.active > li:nth-child(8) {
+  --delay: 0.7s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
 .wrap > .right > nav > ul > li {
+  opacity: 0;
+  visibility: hidden;
   width: 10vw;
   height: 9vw;
   border: 1px solid black;
@@ -56,7 +218,6 @@
     height: 580px;
   }
   .wrap > .left > img {
-    left: 0;
     width: 650px;
     height: 100%;
   }
@@ -85,7 +246,6 @@
   }
   .wrap > .left > img {
     position: absolute;
-    left: 0;
     width: 85.5vw;
     height: 30vw;
   }
@@ -119,8 +279,14 @@
     height: 231px;
   }
   .wrap > .left > img {
-    left: -8rem;
-    width: 658.35px;
+    left: -11rem;
+    width: 658.34px;
     height: 100%;
+  }
+  .wrap > .left > img.active {
+    left: -8rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s, visibility 1s, left 1s;
   }
 }

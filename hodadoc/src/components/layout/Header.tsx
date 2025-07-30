@@ -10,7 +10,7 @@ function Header() {
                     <div className={styles.top}>
                         <div className={styles.logo}>
                             <Link href="">
-                                <Image src={"/images/logo.png"} alt="logo" width={90} height={60} />
+                                <Image src={"/images/logo.png"} alt="logo" width={90} height={60} priority={true} />
                             </Link>
                         </div>
                         <form className={styles.search} action="">

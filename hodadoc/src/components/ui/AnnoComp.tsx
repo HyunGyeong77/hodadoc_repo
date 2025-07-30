@@ -7,7 +7,7 @@ import { ImPlus as PlusIcon } from "react-icons/im";
 
 function AnnoComp({ text }: AnnoProps) {
     return (
-        <div className={styles.anno}>
+        <div className={`${styles.anno} anno`}>
             <div className={styles.top}>
                 <div>
                     <h2>{text.title[0]}</h2>

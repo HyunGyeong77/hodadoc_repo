@@ -24,6 +24,28 @@
   align-items: center;
   height: 400px;
 }
+.section > div > div > .wrap > .left {
+  opacity: 0;
+  visibility: hidden;
+}
+.section > div > div > .wrap > .left.active {
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
 .section > div > div > .wrap > .right {
   width: 100%;
 }
@@ -31,6 +53,125 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 100%;
+}
+.section > div > div > .wrap > .right > ul > li {
+  opacity: 0;
+  visibility: hidden;
+  --delay:0;
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(6) {
+  --delay: 0.1s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(5) {
+  --delay: 0.2s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(4) {
+  --delay: 0.3s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(3) {
+  --delay: 0.4s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(2) {
+  --delay: 0.5s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+.section > div > div > .wrap > .right > ul > li.active:nth-child(1) {
+  --delay: 0.6s;
+  animation: anim_x_move 0.8s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_x_move {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
 }
 .section > div > div > .wrap > .right > ul > li > a {
   display: flex;
@@ -63,7 +204,7 @@
     width: 1500px;
   }
   .section > div > div > .wrap > .left {
-    transform: translateX(6rem);
+    transform: translateX(6rem) !important;
   }
   .section > div > div > .wrap > .left > img {
     width: 300px;
@@ -86,6 +227,9 @@
     margin-top: 100px;
     background: rgba(0, 173, 86, 0.7);
   }
+  .section > div > div {
+    padding-bottom: 5rem;
+  }
   .section > div > div > .wrap {
     display: flex;
     flex-direction: column;
@@ -98,9 +242,143 @@
   .section > div > div > .wrap > img:nth-child(2) {
     transform: translateY(5rem);
   }
+  .section > div > div > .wrap > .left.active {
+    animation: anim_up_down 1s ease forwards;
+    animation-delay: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-60px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
   .section > div > div > .wrap > .right > ul {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     row-gap: 2rem;
+  }
+  .section > div > div > .wrap > .right > ul > li {
+    --delay:0;
+  }
+  .section > div > div > .wrap > .right > ul > li.active:first-child {
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(2) {
+    --delay:0.1s;
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(3) {
+    --delay:0.2s;
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(4) {
+    --delay:0.3s;
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(5) {
+    --delay:0.4s;
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(6) {
+    --delay:0.5s;
+    animation: anim_up_down 0.5s ease forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes anim_up_down {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   }
   .section > div > div > .wrap > .right > ul > li > a > div {
     padding-inline: 3rem;

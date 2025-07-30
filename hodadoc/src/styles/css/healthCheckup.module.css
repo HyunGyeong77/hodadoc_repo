@@ -4,7 +4,27 @@
   gap: 3rem;
 }
 .wrap > h2 {
+  opacity: 0;
+  visibility: hidden;
   font-size: 3rem;
+}
+.wrap > h2.active {
+  animation: anim_up_down 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 .wrap > h2 > span:first-child {
   color: #00CC66;
@@ -13,6 +33,28 @@
   display: grid;
   grid-template-columns: 230px 1fr;
   gap: 20px;
+}
+.wrap > .btm > .left, .wrap > .btm > .right {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > .btm > .left.active, .wrap > .btm > .right.active {
+  animation: anim_up_down 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 .wrap > .btm > .left {
   display: flex;

@@ -1,5 +1,6 @@
 @use '../../variables' as *;
 @use '../../mixins' as *;
+@use '../../animations' as *;
 
 .wrap {
     display:flex;
@@ -7,7 +8,12 @@
     gap:3rem;
 
     & > h2 {
+        @include transparent;
         font-size:3rem;
+
+        &.active {
+            @include anim_up_down(-60px, 1s, 0);
+        }
 
         & > span {
             &:first-child {
@@ -20,6 +26,15 @@
         display:grid;
         grid-template-columns:230px 1fr;
         gap:20px;
+
+        & > .left,
+        & > .right {
+            @include transparent;
+
+            &.active {
+                @include anim_up_down(-40px, 1s, 0);
+            }
+        }
 
         & > .left {
             display:flex;

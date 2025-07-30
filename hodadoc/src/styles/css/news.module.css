@@ -1,4 +1,8 @@
 .wrap {
+  animation: anim_up_down 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -10,6 +14,18 @@
   border: 1px solid black;
   box-sizing: border-box;
   white-space: nowrap;
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 .wrap > div {
   display: flex;

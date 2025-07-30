@@ -1,6 +1,8 @@
 @use '../../media' as *;
 @use '../../levels' as *;
 @use '../../variables' as *;
+@use '../../animations' as *;
+@use '../../mixins' as *;
 
 .section {
     & > div > div {
@@ -29,6 +31,14 @@
                 height:400px;
             }
 
+            & > .left {
+                @include transparent;
+
+                &.active {
+                    @include anim_x_move(50px, 0.8s, 0.6s);
+                }
+            }
+
             & > .right {
                 width:100%;
                 
@@ -38,6 +48,21 @@
                     width:100%;
 
                     & > li {
+                        @include transparent;
+                        --delay:0;
+
+                        &.active {
+                            @for $i from 2 through 7 {
+                                $rev: 8 - $i;
+
+                                &:nth-child(#{$rev}) {
+                                    --delay: #{($i - 1) * 0.1}s;
+
+                                    @include anim_x_move(50px, 0.8s, var(--delay));
+                                }
+                            }
+                        }
+
                         & > a {
                             display:flex;
                             flex-direction:column;
@@ -79,7 +104,7 @@
         }
 
         & > .left {
-            transform:translateX(6rem);
+            transform:translateX(6rem) !important;
 
             & > img {
                 width:300px;
@@ -112,6 +137,8 @@
 
         & > div {
             & > div {
+                padding-bottom:5rem;
+
                 & > .wrap {
                     display:flex;
                     flex-direction:column;
@@ -125,6 +152,12 @@
                     & > img:nth-child(2) {
                         transform:translateY(5rem);
                     }
+
+                    & > .left {
+                        &.active {
+                            @include anim_up_down(-60px, 1s, 0);
+                        }
+                    }
     
                     & > .right {
                         & > ul {
@@ -132,7 +165,21 @@
                             row-gap:2rem;
     
                             & > li {
-    
+                                --delay:0;
+
+                                &.active {
+                                    &:first-child {
+                                        @include anim_up_down(-10px, 0.5s, 0);
+                                    }
+
+                                    @for $i from 2 through 6 {
+                                        &:nth-child(#{$i}) {
+                                            --delay:#{($i - 1) * 0.1}s;
+                                            @include anim_up_down(-10px, 0.5s, var(--delay));
+                                        }
+                                    }
+                                }
+
                                 & > a {
                                     & > div {
                                         padding-inline:3rem;

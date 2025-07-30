@@ -8,6 +8,74 @@
   gap: 1.5rem;
   width: 100%;
 }
+.wrap > div {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > div > div, .wrap > div > nav {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > div > div {
+  transform: translateY(-5px);
+}
+.wrap > div > nav {
+  transform: translateY(-15px);
+}
+.wrap > div.active > div, .wrap > div.active > nav {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+}
+.wrap > div.active:first-child {
+  animation: anim_up_down 0.7s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > div.active:first-child > div {
+  transition-delay: 0.3s;
+}
+.wrap > div.active:first-child > nav {
+  transition-delay: 0.5s;
+}
+.wrap > div.active:last-child {
+  animation: anim_up_down 1s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes anim_up_down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > div.active:last-child > div {
+  transition-delay: 0.8s;
+}
+.wrap > div.active:last-child > nav {
+  transition-delay: 1s;
+}
 
 @media (max-width: 1145px) {
   .wrap {

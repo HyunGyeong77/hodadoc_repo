@@ -11,3 +11,8 @@
         margin-right:$margin-right;
     }
 }
+
+@mixin transparent {
+    opacity:0;
+    visibility:hidden;
+}

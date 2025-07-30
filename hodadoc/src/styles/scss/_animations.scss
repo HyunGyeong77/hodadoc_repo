@@ -1,0 +1,52 @@
+@mixin anim_up_down($translateY, $duration, $delay) {
+    @keyframes anim_up_down {
+        from {
+            opacity:0;
+            visibility:hidden;
+            transform:translateY($translateY);
+        } to {
+            opacity:1;
+            visibility:visible;
+            transform:translateY(0);
+        }
+    }
+
+    animation:anim_up_down $duration ease forwards;
+    animation-delay:$delay;
+    opacity:0;
+    visibility:hidden;
+}
+
+@mixin anim_x_move($translateX, $duration, $delay) {
+    @keyframes anim_x_move {
+        from {
+            opacity:0;
+            visibility:hidden;
+            transform:translateX($translateX);
+        }
+        to {
+            opacity:1;
+            visibility:visible;
+            transform:translateX(0);
+        }
+    }
+
+    animation:anim_x_move $duration ease forwards;
+    animation-delay:$delay;
+    opacity:0;
+    visibility:hidden;
+}
+
+@mixin anim_visible($duration) {
+    @keyframes anim_visible {
+        from {
+            opacity:0;
+            visibility:hidden;
+        } to {
+            opacity:1;
+            visibility:visible;
+        }
+    }
+
+    animation:anim_visible $duration ease forwards;
+}

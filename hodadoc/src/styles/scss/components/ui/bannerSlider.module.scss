@@ -1,14 +1,18 @@
 @use '../../variables' as *;
 @use '../../levels' as *;
+@use '../../animations' as *;
 
 .wrap {
+    @include anim_up_down(-60px, 1s, 0);
     position:relative;
     border-radius:20px;
     border:2px solid $light-gray2;
     box-sizing:border-box;
     overflow:hidden;
+    transform:translateY(-60px);
 
     & > button {
+        @include anim_visible(1s);
         position:absolute;
         top:40%;
         border-radius:50%;
@@ -36,6 +40,7 @@
     }
 
     & > .btns {
+        @include anim_visible(1s);
         position:absolute;
         bottom:1rem;
         left:45%;

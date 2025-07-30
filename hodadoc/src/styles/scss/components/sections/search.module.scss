@@ -1,5 +1,6 @@
 @use '../../variables' as *;
 @use '../../media' as *;
+@use '../../animations' as *;
 
 .wrap {
     position:relative;
@@ -8,6 +9,7 @@
     gap:3rem;
 
     & > .sticky {
+        @include anim_up_down(-60px, 1s, 0.8s);
         position:absolute;
         right:-10vw;
         width:10%;
@@ -72,6 +74,7 @@
     }
 
     & > .search {
+        @include anim_up_down(-60px, 1s, 0.6s);
         background:$light-green;
         padding-block:2rem;
         border:1px solid $black;
@@ -336,6 +339,31 @@
                 box-shadow:0px 0px 10px 2px rgba(0, 0, 0, 0.1);
                 border-radius:10px;
                 overflow:hidden;
+                opacity:0;
+                visibility:hidden;
+                transition:transform 0.2s;
+
+                &.active {
+                    --delay:0s;
+
+                    &:nth-child(3n + 2) {
+                        --delay:0.1s;
+                    }
+
+                    &:nth-child(3n) {
+                        --delay:0.2s;
+                    }
+
+                    @include anim_up_down(-60px, 0.4s, var(--delay));
+                }
+
+                &:hover {
+                    transform:translateY(-7px);
+
+                    & > article:first-child > img {
+                        scale:1.05;
+                    }
+                }
 
                 &:nth-child(n + 7) {
                     display:none;
@@ -345,7 +373,16 @@
                     display:flex;
                 }
 
-                & > article {
+                & > article:first-child {
+                    height:180px;
+                    overflow:hidden;
+
+                    & > img {
+                        transition:scale 0.2s;
+                    }
+                }
+
+                & > article:last-child {
                     padding-block:1rem;
 
                     & > p {
@@ -488,6 +525,25 @@
     }
 }
 
+
+@include media_max_1670 {
+    .wrap > .imgs > ul > li.active {
+        --delay:0s;
+
+        &:nth-child(3n + 2),
+        &:nth-child(3n) {
+            --delay:0s;
+        }
+
+        &:nth-child(2n) {
+            --delay:0.1s;
+        }
+
+        @include anim_up_down(-60px, 0.4s, var(--delay));
+    }
+}
+
+
 @include media_max_1170 {
     .wrap {
         & > .sticky > div {
@@ -503,17 +559,32 @@
     }
 }
 
-@include media_max_1145 {
+@include media_max_1160 {
     .wrap > .imgs > ul {
         & > li {
             width:100%;
 
-            & > img {
-                width:100%;
-                object-fit:cover;
+            &.active {
+                --delay:0s;
+
+                &:nth-child(3n + 2),
+                &:nth-child(3n),
+                &:nth-child(2n) {
+                    --delay:0s;
+                }
+
+                @include anim_up_down(-60px, 0.4s, var(--delay));
             }
 
-            & > article > p:not(:first-child) {
+            & > article:first-child {
+                & > img {
+                    width:100%;
+                    height:auto;
+                    object-fit:cover;
+                }
+            }
+
+            & > article:last-child > p:not(:first-child) {
                 grid-template-columns:90px 2fr;
             }   
         }
