@@ -11,8 +11,8 @@ function HealthInfo() {
     const [isImgChange, setIsImgChange] = useState(false);
 
     useEffect(() => {   // 애니메이션
-        const left_img = document.querySelector(".left img") as HTMLElement;
-        const right = document.querySelector(".right ul") as HTMLElement;
+        const left_img = document.querySelector(".healthInfo_left img") as HTMLElement;
+        const right = document.querySelector(".healthInfo_right ul") as HTMLElement;
         const arr = [left_img, right] as HTMLElement[];
 
         animationObserver(arr, styles);
@@ -36,13 +36,13 @@ function HealthInfo() {
             <div className="container">
                 <div className="layout">
                     <div className={styles.wrap}>
-                        <div className={`${styles.left} left`}>
+                        <div className={`${styles.left} healthInfo_left`}>
                             {isImgChange ?
                                 <Image src="/images/healthInfo.png" alt="healthInfo" width={700} height={600} /> :
                                 <Image src="/images/healthInfo2.png" alt="healthInfo2" width={1000} height={350} />
                             }
                         </div>
-                        <div className={`${styles.right} right`}>
+                        <div className={`${styles.right} healthInfo_right`}>
                             <nav>
                                 <ul>
                                     {text.right.map((item, index) => (

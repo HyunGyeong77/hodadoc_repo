@@ -40,6 +40,10 @@
                 & > li {
                     --delay:0;
 
+                    &:first-child {
+                        @include anim_x_move(-60px, 0.8s, 0);
+                    }
+
                     @for $i from 2 through 8 {
                         &:nth-child(#{$i}) {
                             --delay: #{($i - 1) * 0.1}s;
@@ -47,8 +51,6 @@
                             @include anim_x_move(-60px, 0.8s, var(--delay));
                         }
                     }
-
-                    @include anim_x_move(-60px, 0.8s, var(--delay));
                 }
             }
 
@@ -56,8 +58,6 @@
                 @include transparent;
                 width:10vw;
                 height:9vw;
-                border:1px solid $black;
-                border-radius:20px;
 
                 & > a {
                     display:flex;
@@ -66,7 +66,13 @@
                     justify-content:center;
                     align-items:center;
                     height:100%;
-                    border-radius:inherit;
+                    border:1px solid $black;
+                    border-radius:20px;
+                    transition:transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+                    &:hover {
+                        @include iconHover(-20px, $gray, $dark-green);
+                    }
 
                     & > img {
                         width:3vw;

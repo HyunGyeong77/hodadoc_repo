@@ -76,6 +76,16 @@
                     width:98%;
                     font-weight:bold;
                     white-space:nowrap;
+                    
+                    & > span {
+                        transition:color 0.2s;
+                    }
+
+                    &:hover > span {
+                        &:first-child {
+                            color:$dark-green;
+                        }
+                    }
 
                     & > span:first-child {
                         overflow:hidden;

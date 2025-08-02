@@ -69,6 +69,12 @@
   font-weight: bold;
   white-space: nowrap;
 }
+.anno > .btm > ul > li > a > span {
+  transition: color 0.2s;
+}
+.anno > .btm > ul > li > a:hover > span:first-child {
+  color: #00AD56;
+}
 .anno > .btm > ul > li > a > span:first-child {
   overflow: hidden;
   text-overflow: ellipsis;

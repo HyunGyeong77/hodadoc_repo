@@ -16,3 +16,9 @@
     opacity:0;
     visibility:hidden;
 }
+
+@mixin iconHover($translateY, $shadowColor, $borderColor) {
+    transform:translateY($translateY) !important;
+    box-shadow:0px 10px 10px 2px $shadowColor;
+    border-color: $borderColor;
+}

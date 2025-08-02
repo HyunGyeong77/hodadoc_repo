@@ -32,10 +32,14 @@
             }
 
             & > .left {
-                @include transparent;
-
                 &.active {
-                    @include anim_x_move(50px, 0.8s, 0.6s);
+                    & > img {
+                        @include anim_x_move(50px, 0.8s, 0.8s);
+                    }
+                }
+
+                & > img {
+                    @include transparent;
                 }
             }
 
@@ -69,11 +73,16 @@
                             align-items:center;
                             gap:1.5rem;
 
+                            &:hover > div {
+                                @include iconHover(-20px, rgba(0, 0, 0, 0.2), $black);
+                            }
+
                             & > div {
                                 border:1px solid $black;
                                 border-radius:20px;
                                 padding-inline:1.7vw;
                                 padding-block:1.2vw;
+                                transition: transform 0.3s, box-shadow 0.3s;
 
                                 & > img {
                                     width:3vw;
@@ -154,6 +163,8 @@
                     }
 
                     & > .left {
+                        @include transparent;
+
                         &.active {
                             @include anim_up_down(-60px, 1s, 0);
                         }
