@@ -283,17 +283,20 @@
   }
   .wrap > .left {
     position: relative;
-    height: 231px;
-  }
-  .wrap > .left > img {
-    left: -11rem;
-    width: 658.34px;
-    height: 100%;
   }
   .wrap > .left > img.active {
-    left: -8rem;
+    left: -3rem;
     opacity: 1;
     visibility: visible;
     transition: opacity 1s, visibility 1s, left 1s;
+  }
+}
+@media (max-width: 460px) {
+  .wrap > .left {
+    height: 138px;
+  }
+  .wrap > .left > img {
+    width: 393.3px;
+    height: 100%;
   }
 }

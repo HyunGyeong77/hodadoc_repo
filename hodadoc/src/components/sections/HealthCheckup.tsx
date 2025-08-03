@@ -107,9 +107,13 @@ function HealthCheckup() {
     }, []);
 
     useEffect(() => {
+        const textRect = mapTextRef.current?.offsetTop as number;
+        const wrapRect = mapTextWrapRef.current?.offsetTop as number;
+        const scrollToTop = textRect - wrapRect;
+
         mapTextWrapRef.current?.scrollTo({
-            top: mapTextRef.current?.offsetTop,
-            behavior: "smooth"
+            top: scrollToTop,
+            behavior:"smooth"
         });
     }, [mapChange]);
 

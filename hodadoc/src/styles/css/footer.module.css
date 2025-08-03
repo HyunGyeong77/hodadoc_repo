@@ -62,8 +62,45 @@
   opacity: 80%;
 }
 
+@media (max-width: 770px) {
+  .footer > div > div > .left > .top > h2 {
+    font-size: 1.3rem;
+  }
+  .footer > div > div > .left > .top > p {
+    font-size: 0.8rem;
+  }
+  .footer > div > div > .left > .btm > ul > li {
+    font-size: 0.6rem;
+  }
+  .footer > div > div > .right > .top {
+    gap: 1rem;
+  }
+  .footer > div > div > .right > .top:hover {
+    color: #00AD56;
+  }
+  .footer > div > div > .right > .top > p {
+    font-size: 0.9rem;
+  }
+  .footer > div > div > .right > .top > .arrowUpIcon {
+    font-size: 1.7rem;
+  }
+  .footer > div > div > .right > .btm > span {
+    font-size: 0.7rem;
+  }
+}
 @media (max-width: 620px) {
+  .footer > div > div {
+    flex-direction: column;
+  }
+  .footer > div > div > .left {
+    gap: 1.2rem;
+  }
+  .footer > div > div > .right {
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 460px) {
   .footer {
-    width: 620px;
+    width: 460px;
   }
 }

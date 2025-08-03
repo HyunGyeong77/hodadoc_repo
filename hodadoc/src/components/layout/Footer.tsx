@@ -34,10 +34,10 @@ function Footer() {
                         </nav>
                     </div>
                     <div className={styles.right}>
-                        <a href="#search_section" onClick={search_onClick} className={styles.top}>
+                        <Link href="#search_section" onClick={search_onClick} className={styles.top}>
                             <p>{text.search}</p>
                             <ArrowUpIcon className={styles.arrowUpIcon} />
-                        </a>
+                        </Link>
                         <div className={styles.btm}>
                             <span>{text.reserved}</span>
                         </div>

@@ -87,8 +87,68 @@
     }
 }
 
+@include media_max_770 {
+    .footer > div > div {
+        & > .left {
+            & > .top {
+                & > h2 { 
+                    font-size:1.3rem;
+                }
+
+                & > p {
+                    font-size:0.8rem;
+                }
+            }
+
+            & > .btm {
+                & > ul {
+                    & > li {
+                        font-size:0.6rem;
+                    }
+                }
+            }
+        }
+
+        & > .right {
+            & > .top {
+                gap:1rem;
+
+                &:hover {
+                    color:$dark-green;
+                }
+                
+                & > p {
+                    font-size:0.9rem;
+                }
+
+                & > .arrowUpIcon {
+                    font-size:1.7rem;
+                }
+            }
+
+            & > .btm > span {
+                font-size:0.7rem;
+            }
+        }
+    }
+}
+
 @include media_max_620 {
+    .footer > div > div {
+        flex-direction:column;
+
+        & > .left {
+            gap:1.2rem;
+        }
+
+        & > .right {
+            flex-direction:row-reverse;
+        }
+    }
+}
+
+@include media_max_460 {
     .footer {
-        width:620px;
+        width:460px;
     }
 }

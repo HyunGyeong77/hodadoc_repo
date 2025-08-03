@@ -1,3 +1,7 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .wrap {
   display: flex;
   flex-direction: column;
@@ -150,10 +154,10 @@
 .wrap > .btm > .right {
   flex: 1;
   display: flex;
-  flex-wrap: wrap;
   border: 1px solid black;
   border-radius: 20px;
   height: 630px;
+  min-width: 800px;
 }
 .wrap > .btm > .right > div:first-child {
   flex: 1;
@@ -183,6 +187,7 @@
   height: 100%;
   width: 98%;
   padding-block: 1.5rem;
+  box-sizing: border-box;
 }
 .wrap > .btm > .right > div:last-child > nav::-webkit-scrollbar {
   width: 7px;
@@ -204,6 +209,7 @@
   gap: 0.5rem;
   margin-inline: auto;
   padding: 0.5rem;
+  box-sizing: border-box;
 }
 .wrap > .btm > .right > div:last-child > nav > ul::after {
   content: "";
@@ -233,4 +239,32 @@
 }
 .wrap > .btm > .right > div:last-child > nav > ul > li:last-child > a {
   font-size: 1.3rem;
+}
+
+@media (max-width: 1398px) {
+  .wrap > .btm > .left {
+    width: 100%;
+  }
+  .wrap > .btm > .left > div > div:last-child > ul > li > ul {
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 0.7rem;
+  }
+}
+@media (max-width: 1110px) {
+  .wrap > .btm > .right {
+    flex-direction: column;
+    min-width: auto;
+    height: 900px;
+  }
+  .wrap > .btm > .right > div:first-child {
+    flex: none;
+    height: 600px;
+  }
+  .wrap > .btm > .right > div:last-child {
+    height: 300px;
+    overflow: hidden;
+    border-left: none;
+    border-top: 1px solid black;
+  }
 }

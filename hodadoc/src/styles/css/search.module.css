@@ -497,7 +497,7 @@
   }
 }
 @media (max-width: 1170px) {
-  .wrap > .sticky > div {
+  .wrap > .sticky {
     display: none;
   }
   .wrap > .search > div > .top > .left > div:first-child {
@@ -552,5 +552,19 @@
   .wrap > .more {
     font-size: 1rem;
     height: 50px;
+  }
+  .wrap .more {
+    width: 25%;
+  }
+  .wrap .more > span:last-child {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 510px) {
+  .wrap > .search > div > .top > .left > div:last-child > input {
+    width: 100px;
+  }
+  .wrap > .search > div > .top > .right > div:first-child > ul {
+    gap: 2rem;
   }
 }

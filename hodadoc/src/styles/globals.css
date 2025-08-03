@@ -67,8 +67,19 @@ button:hover {
 }
 
 @media (max-width: 770px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .layout {
-    width:529px;
+    width:100%;
+    margin:0;
+  }
+}
+
+@media (max-width: 460px) {
+  .layout {
+    width:420px;
   }
 }
 

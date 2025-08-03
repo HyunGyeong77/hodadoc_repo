@@ -1,6 +1,7 @@
 @use '../../variables' as *;
 @use '../../mixins' as *;
 @use '../../animations' as *;
+@use '../../media' as *;
 
 .wrap {
     display:flex;
@@ -124,10 +125,10 @@
         & > .right {
             flex:1;
             display:flex;
-            flex-wrap:wrap;
             border:1px solid $black;
             border-radius:20px;
             height:630px;
+            min-width:800px;
 
             & > div:first-child {
                 flex:1;
@@ -160,6 +161,7 @@
                     height:100%;
                     width:98%;
                     padding-block:1.5rem;
+                    box-sizing:border-box;
 
                     &::-webkit-scrollbar {
                         width:7px;
@@ -184,6 +186,7 @@
                         gap:0.5rem;
                         margin-inline:auto;
                         padding:0.5rem;
+                        box-sizing:border-box;
 
                         &::after {
                             content:"";
@@ -224,6 +227,40 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@include media_max_1398 {
+    .wrap > .btm > .left {
+        width:100%;
+
+        & > div > div:last-child {
+            & > ul > li > ul {
+                flex-wrap:wrap;
+                flex-direction:row;
+                row-gap:0.7rem;
+            }
+        }
+    }
+}
+
+@include media_max_1110 {
+    .wrap > .btm > .right {
+        flex-direction:column;
+        min-width:auto;
+        height:900px;
+
+        & > div:first-child {
+            flex:none;
+            height:600px;
+        }
+
+        & > div:last-child {
+            height:300px;
+            overflow:hidden;
+            border-left:none;
+            border-top:1px solid $black;
         }
     }
 }

@@ -31,6 +31,12 @@
     }
 }
 
+@mixin media_max_1398 {
+    @media(max-width: 1398px) {
+        @content;
+    }
+}
+
 @mixin media_max_1170 {
     @media(max-width: 1170px) {
         @content;
@@ -49,14 +55,20 @@
     }
 }
 
+@mixin media_max_1110 {
+    @media(max-width: 1110px) {
+        @content;
+    }
+}
+
 @mixin media_max_930 {
     @media(max-width:930px) {
         @content;
     }
 }
 
-@mixin media_max_845 {
-    @media(max-width:845px) {
+@mixin media_max_860 {
+    @media(max-width:860px) {
         @content;
     }
 }
@@ -69,6 +81,18 @@
 
 @mixin media_max_620 {
     @media(max-width: 620px) {
+        @content;
+    }
+}
+
+@mixin media_max_510 {
+    @media(max-width: 510px) {
+        @content;
+    }
+}
+
+@mixin media_max_460 {
+    @media(max-width: 460px) {
         @content;
     }
 }

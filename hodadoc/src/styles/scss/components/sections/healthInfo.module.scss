@@ -174,20 +174,26 @@
         
         & > .left {
             position:relative;
-            height:231px;
 
             & > img {
-                left:-11rem;
-                width:658.34px;
-                height:100%;
-
                 &.active {
-                    left:-8rem;
+                    left:-3rem;
                     opacity:1;
                     visibility:visible;
                     transition:opacity 1s, visibility 1s, left 1s;
                 }
             }
+        }
+    }
+}
+
+@include media_max_460 {
+    .wrap > .left {
+        height:138px;
+
+        & > img {
+            width:393.3px;
+            height:100%;
         }
     }
 }
