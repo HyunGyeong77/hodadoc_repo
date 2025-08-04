@@ -4,6 +4,7 @@ import styles from 'styles/css/vaccin.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useEffect} from 'react';
+import {text} from 'services/vaccin';
 import {animationObserver} from '@utils/animationObserver';
 
 function Vaccin() {
@@ -27,13 +28,13 @@ function Vaccin() {
                         </div>
                         <nav className={`${styles.right} vaccin_right`}>
                             <ul>
-                                {Array.from({ length: 6 }).map((_, index) => (
+                                {text.content.map((item, index) => (
                                     <li key={index}>
                                         <Link href="#">
                                             <div>
-                                                <Image src={`https://picsum.photos/200/300?random=${index}`} alt="random_img" width={200} height={300} />
+                                                <Image src={text.image[index]} alt={text.image[index]} width={200} height={300} />
                                             </div>
-                                            <p>병원 및 종합병원</p>
+                                            <p>{item}</p>
                                         </Link>
                                     </li>
                                 ))}

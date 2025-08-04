@@ -48,7 +48,7 @@ function HealthInfo() {
                                     {text.right.map((item, index) => (
                                         <li key={item + index}>
                                             <Link href="#">
-                                                <Image src={`https://picsum.photos/200/300?random=${index}`} alt="random_img" width={200} height={300} />
+                                                <Image src={text.img[index]} alt={text.img[index]} width={70} height={70} />
                                                 <p>{item}</p>
                                             </Link>
                                         </li>

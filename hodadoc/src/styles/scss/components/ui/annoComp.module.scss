@@ -65,6 +65,10 @@
 
             & > li {
                 @include textDot(0.3rem, 0.3rem, 0.5rem);
+
+                &::before {
+                    opacity:60%;
+                }
                 display:flex;
                 align-items:center;
                 width:100%;
@@ -74,7 +78,6 @@
                     justify-content:space-between;
                     font-size:1.4rem;
                     width:98%;
-                    font-weight:bold;
                     white-space:nowrap;
                     
                     & > span {
@@ -94,6 +97,7 @@
 
                     & > span:last-child {
                         opacity:60%;
+                        font-size:1.1rem;
                     }
                 }
             }

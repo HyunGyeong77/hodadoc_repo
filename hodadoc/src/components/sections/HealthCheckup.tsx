@@ -53,7 +53,7 @@ function HealthCheckup() {
         const ctx = canvasRef_cur.getContext("2d", { willReadFrequently: true }) as CanvasRenderingContext2D;
     
         const maskImage: HTMLImageElement = new Image();
-        maskImage.src = "/images/map_canvas.png";
+        maskImage.src = "/hodadoc/images/map_canvas.png";
 
         maskImage.onload = () => {
             canvasRef_cur.width = maskImage.width;

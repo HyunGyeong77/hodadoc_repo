@@ -79,10 +79,10 @@
                             }
 
                             & > div {
-                                border:1px solid $black;
                                 border-radius:20px;
                                 padding-inline:1.7vw;
                                 padding-block:1.2vw;
+                                background:rgba(255, 255, 255, 0.9);
                                 transition: transform 0.3s, box-shadow 0.3s;
 
                                 & > img {
@@ -93,7 +93,9 @@
                             }
 
                             & > p {
-                                white-space:nowrap;
+                                word-break:keep-all;
+                                text-align:center;
+                                width:6.4vw;
                                 font-size:0.9vw;
                             }
                         }
@@ -166,12 +168,8 @@
                     & > .left {
                         &.active {
                             & > img {
-                                @include anim_up_down(-60px, 1s, 0);
+                                @include anim_up_down(-60px, 1.5s, 0);
                             }
-                        }
-
-                        & > img {
-                            @include transparent;
                         }
                     }
     
@@ -185,13 +183,13 @@
 
                                 &.active {
                                     &:first-child {
-                                        @include anim_up_down(-10px, 0.5s, 0);
+                                        @include anim_up_down(-50px, 0.5s, 0);
                                     }
 
                                     @for $i from 2 through 6 {
                                         &:nth-child(#{$i}) {
                                             --delay:#{($i - 1) * 0.1}s;
-                                            @include anim_up_down(-10px, 0.5s, var(--delay));
+                                            @include anim_up_down(-50px, 0.5s, var(--delay));
                                         }
                                     }
                                 }

@@ -22,13 +22,6 @@ function Search() {
     const [dayOtherValue, setDayOtherValue] = useState<boolean>(false);
     const [reserValue, setReserValue] = useState<string>("무관");
     /* //값 입력 */
-    /* 값 전달 */
-    const [searchName, setSearchName] = useState<string>(text.name);
-    const [searchRegion, setSearchRegion] = useState<string>(text.region);
-    const [searchField, setSearchField] = useState<string>(text.field);
-    const [searchTime, setSearchTime] = useState<string[]>([text.time.title]);
-    const [searchDay, setSearchDay] = useState<string>(text.day.title);
-    /* //값 전달 */
     const [isSearch, setIsSearch] = useState<boolean>(false);
     const [moreText, setMoreText] = useState<string>("더보기");
     const [moreNumber, setMoreNumber] = useState<number>(1);
@@ -119,11 +112,12 @@ function Search() {
     }
 
     const searchBtn_onClick = () => {
-        setSearchRegion(regionValue);
-        setSearchField(fieldValue);
-        setSearchName(nameValue);
-        setSearchTime(timeValue);
-        setSearchDay(dayValue);
+        const imgs = document.querySelector(".imgs") as HTMLImageElement;
+
+        window.scrollTo({
+            top: imgs.offsetTop + 500,
+            behavior: "smooth"
+        });
     }
 
     const more_onClick = () => {
@@ -272,17 +266,17 @@ function Search() {
                         </div>
                         <nav className={`${styles.imgs} imgs`}>
                             <ul>
-                                {Array.from({ length: 12 }).map((_, index) => (
+                                {Object.values(text.searchImg).map((item, index) => (
                                     <li key={index} className={index > 5 ? "moreList" : ""}>
                                         <article>
-                                            <Image src={`https://picsum.photos/400/180?random=${index}`} alt="random_img" width={400} height={180} />
+                                            <Image src={item[0]} alt="random_img" width={400} height={180} />
                                         </article>
                                         <article>
-                                            <p>{searchName}</p>
-                                            <p>지역 : <span>{searchRegion}</span></p>
-                                            <p>전문 분야 : <span>{searchField}</span></p>
-                                            <p>진료 시간 : <span>{searchTime.join(", ")}</span></p>
-                                            <p>진료 요일 : <span>{searchDay}</span></p>
+                                            <p>{item[1]}</p>
+                                            <p>지역 : <span>{item[2]}</span></p>
+                                            <p>전문 분야 : <span>{item[3]}</span></p>
+                                            <p>진료 시간 (평일) : <span>{item[4]}</span></p>
+                                            <p>진료 요일 : <span>{item[5]}</span></p>
                                         </article>
                                     </li>
                                 ))}

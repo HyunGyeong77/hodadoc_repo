@@ -33,7 +33,7 @@ function BannerSlider() {
 
             imgs.forEach((item) => {
                 if(item instanceof HTMLImageElement) {
-                    item.style.setProperty("--width", `${clientWidth}px`);
+                    item.style.setProperty("--width", `${clientWidth - 0.2}px`);
                 }
             });
         }
@@ -190,7 +190,7 @@ function BannerSlider() {
                     {text.imgs.map((item, index) => (
                         <li key={item + index}>
                             <Link href="#">
-                                <Image src={`/images/${item}`} alt={item} width={1000} height={500} priority={true} />
+                                <Image src={`/images/${item}`} alt={item} width={866} height={300} priority={true} />
                             </Link>
                         </li>
                     ))}

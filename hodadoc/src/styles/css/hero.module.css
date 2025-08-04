@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 1160px) {
   .section > div > div {
     display: flex;
     flex-direction: column;

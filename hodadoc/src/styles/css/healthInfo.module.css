@@ -193,7 +193,7 @@
 .wrap > .right > nav > ul > li > a {
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: 1.5vw;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -207,9 +207,8 @@
   border-color: #00AD56;
 }
 .wrap > .right > nav > ul > li > a > img {
-  width: 3vw;
-  height: 3vw;
-  border-radius: 10px;
+  width: 2.5vw;
+  height: 2.5vw;
 }
 .wrap > .right > nav > ul > li > a > p {
   font-size: 1vw;

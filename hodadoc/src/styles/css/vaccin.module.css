@@ -187,10 +187,10 @@
   border-color: black;
 }
 .section > div > div > .wrap > .right > ul > li > a > div {
-  border: 1px solid black;
   border-radius: 20px;
   padding-inline: 1.7vw;
   padding-block: 1.2vw;
+  background: rgba(255, 255, 255, 0.9);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .section > div > div > .wrap > .right > ul > li > a > div > img {
@@ -199,7 +199,9 @@
   border-radius: 10px;
 }
 .section > div > div > .wrap > .right > ul > li > a > p {
-  white-space: nowrap;
+  word-break: keep-all;
+  text-align: center;
+  width: 6.4vw;
   font-size: 0.9vw;
 }
 
@@ -251,7 +253,7 @@
     transform: translateY(5rem);
   }
   .section > div > div > .wrap > .left.active > img {
-    animation: anim_up_down 1s ease forwards;
+    animation: anim_up_down 1.5s ease forwards;
     animation-delay: 0;
     opacity: 0;
     visibility: hidden;
@@ -267,10 +269,6 @@
       visibility: visible;
       transform: translateY(0);
     }
-  }
-  .section > div > div > .wrap > .left > img {
-    opacity: 0;
-    visibility: hidden;
   }
   .section > div > div > .wrap > .right > ul {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -289,7 +287,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;
@@ -308,7 +306,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;
@@ -327,7 +325,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;
@@ -346,7 +344,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;
@@ -365,7 +363,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;
@@ -384,7 +382,7 @@
     from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
     to {
       opacity: 1;

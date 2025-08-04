@@ -61,12 +61,14 @@
   background: black;
   margin-right: 0.5rem;
 }
+.anno > .btm > ul > li::before {
+  opacity: 60%;
+}
 .anno > .btm > ul > li > a {
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
   width: 98%;
-  font-weight: bold;
   white-space: nowrap;
 }
 .anno > .btm > ul > li > a > span {
@@ -81,4 +83,5 @@
 }
 .anno > .btm > ul > li > a > span:last-child {
   opacity: 60%;
+  font-size: 1.1rem;
 }

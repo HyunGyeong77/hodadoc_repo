@@ -27,9 +27,9 @@
   justify-content: space-between;
 }
 .wrap > div > div {
+  flex: 1;
   display: flex;
   gap: 3rem;
-  width: 85%;
   font-size: 1.2rem;
 }
 .wrap > div > div > p {
@@ -47,6 +47,7 @@
   background: rgba(0, 0, 0, 0.1);
 }
 .wrap > div > div > nav {
+  flex: 0.98;
   height: 20px;
   overflow: hidden;
 }
@@ -57,13 +58,21 @@
   transition: transform var(--transition);
 }
 .wrap > div > div > nav > ul > li {
-  width: -moz-max-content;
-  width: max-content;
+  position: relative;
+  overflow: hidden;
+}
+.wrap > div > div > nav > ul > li > a {
+  display: inline-block;
 }
 .wrap > div > div > nav > ul > li > a > p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .wrap > div > a {
   font-size: 1rem;
+  opacity: 80%;
 }

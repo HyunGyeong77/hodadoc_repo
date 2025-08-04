@@ -62,7 +62,7 @@
                 & > a {
                     display:flex;
                     flex-direction:column;
-                    gap:2vw;
+                    gap:1.5vw;
                     justify-content:center;
                     align-items:center;
                     height:100%;
@@ -75,9 +75,8 @@
                     }
 
                     & > img {
-                        width:3vw;
-                        height:3vw;
-                        border-radius:10px;
+                        width:2.5vw;
+                        height:2.5vw;
                     }
 
                     & > p {
