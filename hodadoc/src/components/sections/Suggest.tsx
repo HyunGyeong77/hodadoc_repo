@@ -6,7 +6,7 @@ function Suggest() {
             <div className="container">
                 <div className="layout">
                     <div className={styles.wrap}>
-
+                        
                     </div>
                 </div>
             </div>

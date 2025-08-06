@@ -7,16 +7,14 @@
   top: 0;
   right: 0;
   width: 420px;
-  height: 100vh;
-  max-width: 0;
+  --maxWidth:0;
+  max-width: var(--maxWidth);
   overflow: hidden;
   z-index: 200;
   background: white;
-  transition: max-width 0.5s;
+  --transition:max-width 0.5s;
+  transition: var(--transition);
   white-space: nowrap;
-}
-.aside.active {
-  max-width: 250px;
 }
 .aside > div {
   display: flex;
@@ -59,9 +57,6 @@
 }
 
 @media (max-width: 770px) {
-  .aside.active {
-    max-width: 420px;
-  }
   .aside > div > div {
     width: 300px;
   }
@@ -78,5 +73,21 @@
   }
   .aside > div > div > nav > ul > li > a {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 430px) {
+  .aside > div > div {
+    width: 70vw;
+  }
+  .aside > div > div > div > div > a {
+    font-size: max(0.8rem, 4.6vw);
+  }
+  .aside > div > div > nav > ul > li > a {
+    font-size: max(0.9rem, 4.6vw);
+  }
+}
+@media (max-width: 165px) {
+  .aside > div > div {
+    width: 120px;
   }
 }

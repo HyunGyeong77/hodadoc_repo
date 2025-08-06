@@ -1,4 +1,4 @@
-import SuggestSection from '@layout/page/SuggestSection';
+import SuggestSection from '@layout/pages/SuggestPages';
 
 export default function Suggest() {
     return (

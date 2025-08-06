@@ -1,5 +1,6 @@
 @use '../../variables' as *;
 @use '../../animations' as *;
+@use '../../media' as *;
 
 .wrap {
     @include anim_up_down(-60px, 1s, 0.3s);
@@ -72,5 +73,11 @@
             font-size:1rem;
             opacity:80%;
         }
+    }
+}
+
+@include media_max_460 {
+    .wrap {
+        overflow:hidden;
     }
 }

@@ -1,4 +1,5 @@
 @use '../../variables' as *;
+@use '../../media' as *;
 
 .search {
     position:relative;
@@ -41,5 +42,41 @@
         width:3.8rem;
         border-top-right-radius:30px;
         border-bottom-right-radius:30px;
+    }
+}
+
+@include media_max_770 {
+    .search {
+        & > input {
+            width:15.5rem;
+        }
+
+        & > button {
+            width:3.2rem;
+        }
+    }
+}
+
+@include media_max_430 {
+    .search {
+        & > label,
+        & > input,
+        & > button {
+            height:max(2rem, 12vw);
+        }
+
+        & > input {
+            width:83%;
+            font-size:max(0.5rem, 4.5vw);
+            padding-left:6.5vw;
+        }
+
+        & > button {
+            width:17%;
+
+            & > img {
+                width:max(1rem, 9vw);
+            }
+        }
     }
 }

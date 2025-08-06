@@ -63,6 +63,9 @@
 }
 
 @media (max-width: 770px) {
+  .footer > div > div {
+    padding-block: 1rem;
+  }
   .footer > div > div > .left > .top > h2 {
     font-size: 1.3rem;
   }
@@ -91,6 +94,7 @@
 @media (max-width: 620px) {
   .footer > div > div {
     flex-direction: column;
+    padding-block: 0.5rem;
   }
   .footer > div > div > .left {
     gap: 1.2rem;
@@ -98,9 +102,31 @@
   .footer > div > div > .right {
     flex-direction: row-reverse;
   }
+  .footer > div > div > .right > .btm > span {
+    font-size: 0.6rem;
+  }
 }
 @media (max-width: 460px) {
   .footer {
-    width: 460px;
+    position: relative;
+  }
+  .footer > div {
+    height: auto;
+  }
+  .footer > div > div > .left {
+    margin-top: 3rem;
+  }
+  .footer > div > div > .right {
+    flex-direction: row;
+  }
+  .footer > div > div > .right > a {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+@media (max-width: 165px) {
+  .footer {
+    width: 165px;
   }
 }

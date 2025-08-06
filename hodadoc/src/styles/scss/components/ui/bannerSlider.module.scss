@@ -6,6 +6,8 @@
 .wrap {
     @include anim_up_down(-60px, 1s, 0);
     position:relative;
+    display:flex;
+    justify-content:center;
     border-radius:20px;
     border:2px solid $light-gray2;
     box-sizing:border-box;
@@ -13,30 +15,39 @@
     overflow:hidden;
     transform:translateY(-60px);
 
-    & > button {
-        @include anim_visible(1s);
+    & > div {
         position:absolute;
-        top:40%;
-        border-radius:50%;
-        width:3.3rem;
-        height:3.3rem;
+        top:0;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:85%;
+        height:100%;
         z-index:$index_forward1;
 
-        &:first-child {
-            left:10%;
-        }
-
-        &:nth-child(2) {
-            right:10%;
-        }
-
-        & > .arrowIcon {
-            width:100%;
-            height:100%;
-            opacity:0.6;
-
-            &:hover {
-                opacity:1;
+        & > button {
+            @include anim_visible(1s);
+            top:40%;
+            border-radius:50%;
+            width:3.3rem;
+            height:3.3rem;
+    
+            &:first-child {
+                left:10%;
+            }
+    
+            &:nth-child(2) {
+                right:10%;
+            }
+    
+            & > .arrowIcon {
+                width:100%;
+                height:100%;
+                opacity:0.6;
+    
+                &:hover {
+                    opacity:1;
+                }
             }
         }
     }
@@ -109,10 +120,21 @@
 
 @include media_max_460 {
     .wrap {
-        height:180px;
+        border-radius:10px;
+        & > div > button {
+            top:15vw;
+            width:11vw;
+        }
 
         & > .btns {
-            bottom:0;
+            bottom:1vw;
+            & > ul {
+                gap:3vw;
+
+                & > li > button > .btnIcon {
+                    font-size:3.5vw;
+                }
+            }
         }
     }
 }

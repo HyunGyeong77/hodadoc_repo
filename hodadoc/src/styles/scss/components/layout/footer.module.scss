@@ -88,46 +88,50 @@
 }
 
 @include media_max_770 {
-    .footer > div > div {
-        & > .left {
-            & > .top {
-                & > h2 { 
-                    font-size:1.3rem;
-                }
+    .footer > div {
+        & > div {
+            padding-block:1rem;
 
-                & > p {
-                    font-size:0.8rem;
+            & > .left {
+                & > .top {
+                    & > h2 { 
+                        font-size:1.3rem;
+                    }
+    
+                    & > p {
+                        font-size:0.8rem;
+                    }
                 }
-            }
-
-            & > .btm {
-                & > ul {
-                    & > li {
-                        font-size:0.6rem;
+    
+                & > .btm {
+                    & > ul {
+                        & > li {
+                            font-size:0.6rem;
+                        }
                     }
                 }
             }
-        }
-
-        & > .right {
-            & > .top {
-                gap:1rem;
-
-                &:hover {
-                    color:$dark-green;
+    
+            & > .right {
+                & > .top {
+                    gap:1rem;
+    
+                    &:hover {
+                        color:$dark-green;
+                    }
+                    
+                    & > p {
+                        font-size:0.9rem;
+                    }
+    
+                    & > .arrowUpIcon {
+                        font-size:1.7rem;
+                    }
                 }
-                
-                & > p {
-                    font-size:0.9rem;
+    
+                & > .btm > span {
+                    font-size:0.7rem;
                 }
-
-                & > .arrowUpIcon {
-                    font-size:1.7rem;
-                }
-            }
-
-            & > .btm > span {
-                font-size:0.7rem;
             }
         }
     }
@@ -136,6 +140,7 @@
 @include media_max_620 {
     .footer > div > div {
         flex-direction:column;
+        padding-block:0.5rem;
 
         & > .left {
             gap:1.2rem;
@@ -143,12 +148,42 @@
 
         & > .right {
             flex-direction:row-reverse;
+
+            & > .btm > span {
+                font-size:0.6rem;
+            }
         }
     }
 }
 
 @include media_max_460 {
     .footer {
-        width:460px;
+        position:relative;
+
+        & > div {
+            height:auto;
+
+            & > div {
+                & > .left {
+                    margin-top:3rem;
+                }
+    
+                & > .right {
+                    flex-direction:row;
+    
+                    & > a {
+                        position:absolute;
+                        top:0.5rem;
+                        right:0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media_max_165 {
+    .footer {
+        width:165px;
     }
 }

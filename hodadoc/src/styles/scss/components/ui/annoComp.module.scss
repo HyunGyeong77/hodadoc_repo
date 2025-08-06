@@ -1,5 +1,6 @@
 @use '../../variables' as *;
 @use '../../mixins' as *;
+@use '../../media' as *;
 
 .anno {
     display:flex;
@@ -64,14 +65,16 @@
             gap:0.8rem;
 
             & > li {
-                @include textDot(0.3rem, 0.3rem, 0.5rem);
+                @include textDot(0.3rem, 0.3rem);
+                position:relative;
+                padding-left:1rem;
+                display:flex;
+                align-items:center;
+                width:100%;
 
                 &::before {
                     opacity:60%;
                 }
-                display:flex;
-                align-items:center;
-                width:100%;
 
                 & > a {
                     display:flex;
@@ -99,6 +102,72 @@
                         opacity:60%;
                         font-size:1.1rem;
                     }
+                }
+            }
+        }
+    }
+}
+
+@include media_max_430 {
+    .anno {
+        padding-inline:1.5rem;
+
+        & > .top {
+            & > div {
+                & > h2 {
+                    font-size:1.5rem;
+                }
+
+                & > .slashIcon {
+                    font-size:1.7rem;
+                }
+
+                & > p {
+                    font-size:0.9rem;
+                }
+            }
+
+            & > button > .plusIcon {
+                font-size:1rem;
+            }
+        }
+
+        & > .btm {
+            & > ul {
+                & > li {
+                    & > a {
+                        flex-direction:column;
+
+                        & > span {
+                            &:first-child {
+                                font-size:1rem;
+                            }
+                            
+                            &:last-child {
+                                font-size:0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media_max_300 {
+    .anno {
+        & > .top {
+            & > div {
+                flex-direction:column;
+                align-items:baseline;
+
+                & > .slashIcon {
+                    display:none;
+                }
+
+                & > p {
+                    transform:translateY(5px);
+                    padding-left:0.5rem;
                 }
             }
         }

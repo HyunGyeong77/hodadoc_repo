@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {text} from 'services/header';
 import HeaderSearch from '@common/HeaderSearch';
+import {sidebarResize} from '@utils/sidebarResize';
 
 function Header() {
 
@@ -13,8 +14,10 @@ function Header() {
         const target = document.getElementById("sidebar") as HTMLElement;
         const body = document.querySelector("body") as HTMLBodyElement;
 
-        target.classList.add(sidebar_styles.active);
+        target.classList.add(sidebar_styles.sidebar_styles);
         body.style.setProperty("--overflowY", "hidden");
+
+        sidebarResize("click");
     }
 
     return (

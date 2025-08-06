@@ -28,3 +28,9 @@
     }
 }
 
+@include media_max_770 {
+    .section {
+        padding-top:max(110px, 20vw);
+    }
+}
+

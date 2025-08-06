@@ -8,6 +8,8 @@
   opacity: 0;
   visibility: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
   border-radius: 20px;
   border: 2px solid #D5D5D5;
   box-sizing: border-box;
@@ -27,14 +29,22 @@
     transform: translateY(0);
   }
 }
-.wrap > button {
-  animation: anim_visible 1s ease forwards;
+.wrap > div {
   position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+  z-index: 1;
+}
+.wrap > div > button {
+  animation: anim_visible 1s ease forwards;
   top: 40%;
   border-radius: 50%;
   width: 3.3rem;
   height: 3.3rem;
-  z-index: 1;
 }
 @keyframes anim_visible {
   from {
@@ -46,18 +56,18 @@
     visibility: visible;
   }
 }
-.wrap > button:first-child {
+.wrap > div > button:first-child {
   left: 10%;
 }
-.wrap > button:nth-child(2) {
+.wrap > div > button:nth-child(2) {
   right: 10%;
 }
-.wrap > button > .arrowIcon {
+.wrap > div > button > .arrowIcon {
   width: 100%;
   height: 100%;
   opacity: 0.6;
 }
-.wrap > button > .arrowIcon:hover {
+.wrap > div > button > .arrowIcon:hover {
   opacity: 1;
 }
 .wrap > .btns {
@@ -124,9 +134,19 @@
 }
 @media (max-width: 460px) {
   .wrap {
-    height: 180px;
+    border-radius: 10px;
+  }
+  .wrap > div > button {
+    top: 15vw;
+    width: 11vw;
   }
   .wrap > .btns {
-    bottom: 0;
+    bottom: 1vw;
+  }
+  .wrap > .btns > ul {
+    gap: 3vw;
+  }
+  .wrap > .btns > ul > li > button > .btnIcon {
+    font-size: 3.5vw;
   }
 }

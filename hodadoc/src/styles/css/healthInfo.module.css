@@ -292,10 +292,33 @@
 }
 @media (max-width: 460px) {
   .wrap > .left {
-    height: 138px;
+    height: 33vw;
   }
   .wrap > .left > img {
-    width: 393.3px;
+    width: 90vw;
+    height: 100%;
+  }
+  .wrap > .right > nav > ul {
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  }
+  .wrap > .right > nav > ul > li {
+    width: 120px;
+    height: 80px;
+  }
+  .wrap > .right > nav > ul > li > a {
+    border-radius: 15px;
+  }
+  .wrap > .right > nav > ul > li > a > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 165px) {
+  .wrap > .left {
+    height: 54.4px;
+  }
+  .wrap > .left > img {
+    width: 148.5px;
     height: 100%;
   }
 }

@@ -152,13 +152,14 @@
 
         & > div {
             & > div {
-                padding-bottom:5rem;
+                padding-bottom:3rem;
 
                 & > .wrap {
                     display:flex;
                     flex-direction:column;
                     align-items:center;
-                    height:650px;
+                    gap:3rem;
+                    height:auto;
 
                     & > img:first-child {
                         display:none;
@@ -169,6 +170,8 @@
                     }
 
                     & > .left {
+                        height:auto;
+
                         &.active {
                             & > img {
                                 @include anim_up_down(-60px, 1.5s, 0);
@@ -225,26 +228,19 @@
 
 @include media_max_1145 {
     .section > div > div > .wrap > img:nth-child(2) {
-        scale:0.7;
+        width:175px;
+        height:140px;
     }
 }
 
 @include media_max_860 {
     .section {
         & > div > div {
-            & > .wrap {
-                height:800px;
-                gap:2rem;
-                
-                & > .left {
-                    height:150px;
-                }
-    
+            & > .wrap {   
                 & > .right {
                     height:100%;
 
                     & > ul {
-                        grid-template-columns:1fr 1fr;
                         justify-items:center;
                     }
                 }
@@ -254,17 +250,57 @@
 }
 
 @include media_max_620 {
-    .section > div > div > .wrap > .left > img {
-        scale:0.8;
+    .section > div > div > .wrap {
+        & > img:nth-child(2) {
+            width:25vw;
+            height:20vw;
+            transform:translateY(15vw);
+        }
+
+        & > .left > img {
+            width:70vw;
+            height:23vw;
+        }
+
+        & > .right > ul {
+            grid-template-columns:repeat(auto-fill, minmax(130px, 1fr));
+
+            & > li > a {
+                width:90%;
+    
+                & > div {
+                    padding-inline:2rem;
+                    padding-block:1rem;
+    
+                    & > img {
+                        width:58px;
+                        height:58px;
+                    }
+                }
+
+                & > p {
+                    font-size:0.8rem;
+                }
+            }
+        }
     }
 }
 
 @include media_max_460 {
     .section {
-        width:460px;
-
         & > div > div > .wrap {
             position:relative;
+        }
+    }
+}
+
+@include media_max_165 {
+    .section {
+        width:165px;
+
+        & > div > div > .wrap > .left > img {
+            width:115.5px;
+            height:37.9px;
         }
     }
 }

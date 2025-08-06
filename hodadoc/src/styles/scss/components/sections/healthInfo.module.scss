@@ -187,11 +187,43 @@
 }
 
 @include media_max_460 {
+    .wrap {
+        & > .left {
+            height:33vw;
+
+            & > img {
+                width:90vw;
+                height:100%;
+            }
+        }
+
+        & > .right {
+            & > nav > ul {
+                grid-template-columns:repeat(auto-fill, minmax(125px, 1fr));
+
+                & > li {
+                    width:120px;
+                    height:80px;
+    
+                    & > a {
+                        border-radius:15px;
+                        & > img {
+                            width:30px;
+                            height:30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media_max_165 {
     .wrap > .left {
-        height:138px;
+        height:54.4px;
 
         & > img {
-            width:393.3px;
+            width:148.5px;
             height:100%;
         }
     }

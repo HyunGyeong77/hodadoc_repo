@@ -1,3 +1,7 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .search {
   position: relative;
   display: flex;
@@ -34,4 +38,29 @@
   width: 3.8rem;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+@media (max-width: 770px) {
+  .search > input {
+    width: 15.5rem;
+  }
+  .search > button {
+    width: 3.2rem;
+  }
+}
+@media (max-width: 430px) {
+  .search > label, .search > input, .search > button {
+    height: max(2rem, 12vw);
+  }
+  .search > input {
+    width: 83%;
+    font-size: max(0.5rem, 4.5vw);
+    padding-left: 6.5vw;
+  }
+  .search > button {
+    width: 17%;
+  }
+  .search > button > img {
+    width: max(1rem, 9vw);
+  }
 }

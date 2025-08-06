@@ -168,12 +168,14 @@ function BannerSlider() {
 
     return (
         <div ref={wrapRef} className={styles.wrap}>
-            <button onClick={arrow_onClick("left")}>
-                <LeftArrow className={styles.arrowIcon} />
-            </button>
-            <button onClick={arrow_onClick("right")}>
-                <RightArrow className={styles.arrowIcon} />
-            </button>
+            <div>
+                <button onClick={arrow_onClick("left")}>
+                    <LeftArrow className={styles.arrowIcon} />
+                </button>
+                <button onClick={arrow_onClick("right")}>
+                    <RightArrow className={styles.arrowIcon} />
+                </button>
+            </div>
             <nav ref={btnsRef} className={styles.btns}>
                 <ul>
                     {text.imgs.slice(1, text.imgs.length - 1).map((item, index) => (

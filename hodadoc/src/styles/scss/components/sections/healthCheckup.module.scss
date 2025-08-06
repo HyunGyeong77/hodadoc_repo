@@ -47,9 +47,13 @@
             padding-inline:1.5rem;
 
             & > div > div > p {
-                @include textDot(0.3rem, 0.3rem, 0.5rem);
+                @include textDot(0.35rem, 0.35rem);
+                position:relative;
+                display:flex;
+                align-items:center;
                 font-weight:bold;
                 font-size:1.2rem;
+                padding-left:1rem;
             }
             
             & > div {
@@ -63,9 +67,12 @@
                     gap:0.5rem;
 
                     & > span {
-                        @include textDot(0.25rem, 0.25rem, 0.5rem);
-                        display:block;
-                        text-indent:20px;
+                        position:relative;
+                        @include textDot(0.25rem, 0.25rem);
+                        display:flex;
+                        align-items:center;
+                        padding-left:0.5rem;
+                        margin-left:20px;
                         font-size:0.9rem;
                         opacity:0.5;
                     }
@@ -85,8 +92,11 @@
                             margin-top:0.5rem;
 
                             & > p {
+                                display:flex;
+                                align-items:center;
+                                gap:0.3rem;
                                 font-size:0.9rem;
-                                text-indent:0.8rem;
+                                margin-left:0.8rem;
                                 opacity:0.9;
 
                                 &::before {
@@ -101,10 +111,14 @@
                                 margin-top:0.3rem;
 
                                 & > li {
-                                    @include textDot(0.25rem, 0.25rem, 0.5rem);
+                                    @include textDot(0.25rem, 0.25rem);
+                                    position:relative;
+                                    display:flex;
+                                    align-items:center;
                                     opacity:0.5;
-                                    text-indent:1.2rem;
                                     font-size:0.9rem;
+                                    margin-left:1.2rem;
+                                    padding-left:0.5rem;
                                 }
                             }
                         }
@@ -113,7 +127,7 @@
             }
 
             & > p {
-                text-indent:0.5rem;
+                padding-left:0.5rem;
                 font-weight:bold;
 
                 & > span:last-child {
@@ -261,6 +275,41 @@
             overflow:hidden;
             border-left:none;
             border-top:1px solid $black;
+        }
+    }
+}
+
+@include media_max_430 {
+    .wrap {
+        & > h2 {
+            font-size:max(1.5rem, 10vw);
+        }
+
+        & > .btm {
+            & > .left {
+                padding-inline:1rem;
+                word-break:keep-all;
+            }
+
+            & > .right {
+                & > div {
+                    &:first-child {
+                        display:none;
+                    }
+
+                    &:last-child {
+                        border-top:none;
+
+                        & > nav > ul {
+                            align-items:baseline;
+                            flex-direction:column;
+                            & > li:first-child > button {
+                                word-break:keep-all;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

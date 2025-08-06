@@ -79,9 +79,9 @@ button:hover {
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 165px) {
   .layout {
-    width:420px;
+    width:135px;
   }
 }
 

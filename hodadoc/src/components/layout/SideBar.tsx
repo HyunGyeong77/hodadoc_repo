@@ -5,32 +5,32 @@ import {text} from 'services/header';
 import Link from 'next/link';
 import HeaderSearch from '@common/HeaderSearch';
 import {useEffect} from 'react';
+import {sidebarResize} from '@utils/sidebarResize';
 
 import { MdOutlineCancel as CancelIcon } from "react-icons/md";
 
 function SideBar() {
 
-    const isVisible = () => {
+    const cancel_onClick = () => {
         const target = document.getElementById("sidebar") as HTMLElement;
         const body = document.querySelector("body") as HTMLBodyElement;
 
-        target.classList.remove(styles.active);
+        target.style.setProperty("--maxWidth", "0");
         body.style.setProperty("--overflowY", "auto");
+        target.classList.remove(styles.active);
     }
 
     useEffect(() => {
         const resizeHandler = () => {
-            if(window.innerWidth > 1170) {
-                isVisible();
+            if(window.innerWidth < 1170) {
+                sidebarResize("resize");
+            } else {
+                cancel_onClick();
             }
         }
 
         window.addEventListener("resize", resizeHandler);
     }, []);
-
-    const cancel_onClick = () => {
-        isVisible();
-    }
 
     return (
         <aside id="sidebar" className={styles.aside}>

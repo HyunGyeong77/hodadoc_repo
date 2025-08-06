@@ -26,3 +26,8 @@
     flex-direction: column;
   }
 }
+@media (max-width: 770px) {
+  .section {
+    padding-top: max(110px, 20vw);
+  }
+}

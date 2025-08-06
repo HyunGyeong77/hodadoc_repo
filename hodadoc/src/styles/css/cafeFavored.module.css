@@ -1,3 +1,7 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .wrap {
   animation: anim_up_down 1s ease forwards;
   animation-delay: 0.3s;
@@ -75,4 +79,10 @@
 .wrap > div > a {
   font-size: 1rem;
   opacity: 80%;
+}
+
+@media (max-width: 460px) {
+  .wrap {
+    overflow: hidden;
+  }
 }

@@ -238,7 +238,7 @@ function Search() {
                                                     <button type="button" className={dayOtherValue ? styles.active : styles.inActive}
                                                         onClick={otherMenu_onClick}>
                                                         {text.day.other}
-                                                        <CircleCheckBox />
+                                                        <CircleCheckBox className={styles.circleCheckBoxIcon} />
                                                     </button>
                                                 </div>
                                             </div>

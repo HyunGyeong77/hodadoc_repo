@@ -72,7 +72,7 @@ function HealthCheckup() {
 
             const hex = rgbHex(pixel[0], pixel[1], pixel[2]);
 
-            return colorMap[hex.toLocaleUpperCase()] || "/images/map.png";
+            return colorMap[hex.toLocaleUpperCase()] || "/hodadoc/images/map.png";
         }
 
         const clickHandler = (e: MouseEvent) => {
@@ -90,7 +90,7 @@ function HealthCheckup() {
             const x: number = e.clientX - rect.left;
             const y: number = e.clientY - rect.top;
 
-            if(colorHexComp(x, y).includes("/images/map.png")) {
+            if(colorHexComp(x, y).includes("/hodadoc/images/map.png")) {
                 mapRef_cur.style.setProperty("--cursor", "default");
             } else {
                 mapRef_cur.style.setProperty("--cursor", "pointer");
