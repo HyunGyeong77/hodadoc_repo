@@ -1,3 +1,7 @@
+/* min */
+/* //min */
+/* max */
+/* //max */
 .wrap {
   animation: anim_up_down 1s ease forwards;
   animation-delay: 0;
@@ -7,6 +11,7 @@
   border-radius: 20px;
   border: 2px solid #D5D5D5;
   box-sizing: border-box;
+  height: 18.5vw;
   overflow: hidden;
   transform: translateY(-60px);
 }
@@ -58,8 +63,11 @@
 .wrap > .btns {
   animation: anim_visible 1s ease forwards;
   position: absolute;
-  bottom: 1rem;
-  left: 45%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 0.7rem;
   z-index: 1;
 }
 @keyframes anim_visible {
@@ -80,11 +88,11 @@
   display: flex;
 }
 .wrap > .btns > ul > li > button > .btnIcon {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .wrap > .imgs {
   width: 100%;
-  height: 300px;
+  height: 100%;
 }
 .wrap > .imgs > ul {
   display: flex;
@@ -96,5 +104,29 @@
 .wrap > .imgs > ul > li > a > img {
   --width: 0;
   width: var(--width);
-  height: 300px;
+  height: 100%;
+}
+
+@media (min-width: 2000px) {
+  .wrap {
+    height: 366px;
+  }
+}
+@media (max-width: 1160px) {
+  .wrap {
+    height: 30vw;
+  }
+}
+@media (max-width: 770px) {
+  .wrap {
+    height: 40vw;
+  }
+}
+@media (max-width: 460px) {
+  .wrap {
+    height: 180px;
+  }
+  .wrap > .btns {
+    bottom: 0;
+  }
 }

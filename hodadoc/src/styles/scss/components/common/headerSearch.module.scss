@@ -1,0 +1,45 @@
+@use '../../variables' as *;
+
+.search {
+    position:relative;
+    display:flex;
+    align-items:center;
+
+    & > label,
+    & > input,
+    & > button {
+        height:3.3rem;
+    }
+
+    & > label {
+        width:39.3rem;
+        background:$white;
+        border-radius:50px;
+        border:1px solid $black;
+    }
+    
+    & > input {
+        position:absolute;
+        width:35.5rem;
+        background:none;
+        border-top-left-radius:50px;
+        border-bottom-left-radius:50px;
+        box-sizing:border-box;
+        border:none;
+        outline:none;
+        padding-left:2rem;
+        font-size:1.3rem;
+        line-height:5;
+    }
+
+    & > button {
+        position:absolute;
+        right:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:3.8rem;
+        border-top-right-radius:30px;
+        border-bottom-right-radius:30px;
+    }
+}

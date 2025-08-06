@@ -178,15 +178,15 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  width: -moz-max-content;
-  width: max-content;
+  width: 6.6vw;
 }
 .section > div > div > .wrap > .right > ul > li > a:hover > div {
   transform: translateY(-20px) !important;
   box-shadow: 0px 10px 10px 2px rgba(0, 0, 0, 0.2);
-  border-color: black;
+  border-color: #00AD56;
 }
 .section > div > div > .wrap > .right > ul > li > a > div {
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   padding-inline: 1.7vw;
   padding-block: 1.2vw;
@@ -200,8 +200,8 @@
 }
 .section > div > div > .wrap > .right > ul > li > a > p {
   word-break: keep-all;
+  bottom: -10px;
   text-align: center;
-  width: 6.4vw;
   font-size: 0.9vw;
 }
 
@@ -219,6 +219,9 @@
   .section > div > div > .wrap > .left > img {
     width: 300px;
     height: 100px;
+  }
+  .section > div > div > .wrap > .right > ul > li > a {
+    width: 7.5rem;
   }
   .section > div > div > .wrap > .right > ul > li > a > div {
     padding-inline: 2rem;
@@ -389,6 +392,9 @@
       visibility: visible;
       transform: translateY(0);
     }
+  }
+  .section > div > div > .wrap > .right > ul > li > a {
+    width: 11.1rem;
   }
   .section > div > div > .wrap > .right > ul > li > a > div {
     padding-inline: 3rem;

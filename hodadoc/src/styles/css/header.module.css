@@ -26,43 +26,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.header > div > div > .top > .search {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.header > div > div > .top > .search > label, .header > div > div > .top > .search > input, .header > div > div > .top > .search > button {
-  height: 3.3rem;
-}
-.header > div > div > .top > .search > label {
-  width: 39.3rem;
-  background: white;
-  border-radius: 50px;
-  border: 1px solid black;
-}
-.header > div > div > .top > .search > input {
-  position: absolute;
-  width: 35.5rem;
-  background: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-  padding-left: 2rem;
-  font-size: 1.3rem;
-  line-height: 5;
-}
-.header > div > div > .top > .search > button {
-  position: absolute;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3.8rem;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
 .header > div > div > .top > .login {
   display: flex;
   justify-content: right;
@@ -102,13 +65,13 @@
   .header {
     height: 100px;
   }
-  .header > div > div > .top > .search > label {
+  .header > div > div > .top > form > label {
     width: 25rem;
   }
-  .header > div > div > .top > .search > input {
+  .header > div > div > .top > form > input {
     width: 22rem;
   }
-  .header > div > div > .top > .search > button {
+  .header > div > div > .top > form > button {
     width: 3rem;
   }
   .header > div > div > .top > .login, .header > div > div > .btm {
@@ -116,7 +79,7 @@
   }
 }
 @media (max-width: 770px) {
-  .header > div > div > .top > .search {
+  .header > div > div > .top > form {
     display: none;
   }
 }

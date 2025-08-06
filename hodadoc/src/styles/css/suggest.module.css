@@ -1,0 +1,6 @@
+.section > div > div {
+  padding-block: 0;
+}
+.section > div > div > .wrap {
+  height: 100vh;
+}

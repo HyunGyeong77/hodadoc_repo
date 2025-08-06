@@ -72,13 +72,14 @@
                             flex-direction:column;
                             align-items:center;
                             gap:1.5rem;
-                            width:max-content;
+                            width:6.6vw;
 
                             &:hover > div {
-                                @include iconHover(-20px, rgba(0, 0, 0, 0.2), $black);
+                                @include iconHover(-20px, rgba(0, 0, 0, 0.2), $dark-green);
                             }
 
                             & > div {
+                                border:1px solid rgba(255, 255, 255, 0.9);
                                 border-radius:20px;
                                 padding-inline:1.7vw;
                                 padding-block:1.2vw;
@@ -94,8 +95,8 @@
 
                             & > p {
                                 word-break:keep-all;
+                                bottom:-10px;
                                 text-align:center;
-                                width:6.4vw;
                                 font-size:0.9vw;
                             }
                         }
@@ -125,6 +126,8 @@
         }
 
         & > .right > ul > li > a {
+            width:7.5rem;
+
             & > div {
                 padding-inline:2rem;
                 padding-block:1.5rem;
@@ -195,6 +198,8 @@
                                 }
 
                                 & > a {
+                                    width:11.1rem;
+                                    
                                     & > div {
                                         padding-inline:3rem;
                                         padding-block:1.5rem;

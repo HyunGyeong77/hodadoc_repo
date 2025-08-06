@@ -24,7 +24,8 @@
       "@layout/*": ["components/layout/*"],
       "@utils/*": ["lib/utils/*"],
       "@sections/*": ["components/sections/*"],
-      "@ui/*": ["components/ui/*"]
+      "@ui/*": ["components/ui/*"],
+      "@common/*": ["components/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

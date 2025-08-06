@@ -2,10 +2,8 @@ export const animationObserver = (element: HTMLElement | HTMLElement[], styles: 
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if(entry.isIntersecting) {
-                const target = entry.target as HTMLElement;
-                target.classList.add(styles.active);
-            }
+            const target = entry.target as HTMLElement;
+            target.classList.toggle(styles.active, entry.isIntersecting);
         });
     });
 

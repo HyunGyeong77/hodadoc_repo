@@ -1,6 +1,7 @@
 @use '../../variables' as *;
 @use '../../levels' as *;
 @use '../../animations' as *;
+@use '../../media' as *;
 
 .wrap {
     @include anim_up_down(-60px, 1s, 0);
@@ -8,6 +9,7 @@
     border-radius:20px;
     border:2px solid $light-gray2;
     box-sizing:border-box;
+    height:18.5vw;
     overflow:hidden;
     transform:translateY(-60px);
 
@@ -42,8 +44,11 @@
     & > .btns {
         @include anim_visible(1s);
         position:absolute;
-        bottom:1rem;
-        left:45%;
+        left:0;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        bottom:0.7rem;
         z-index:$index_forward1;
 
         & > ul {
@@ -54,7 +59,7 @@
                 display:flex;
 
                 & > button > .btnIcon {
-                    font-size:1.2rem;
+                    font-size:1rem;
                 }
             }
         }
@@ -62,7 +67,7 @@
 
     & > .imgs {
         width:100%;
-        height:300px;
+        height:100%;
 
         & > ul {
             display:flex;
@@ -72,16 +77,42 @@
             transition: transform var(--transition);
 
             & > li {
-
                 & > a {
-
                     & > img {
                         --width: 0;
                         width: var(--width);
-                        height:300px;
+                        height:100%;
                     }
                 }
             }
+        }
+    }
+}
+
+@include media_min_2000 {
+    .wrap {
+        height:366px;
+    }
+}
+
+@include media_max_1160 {
+    .wrap {
+        height:30vw;
+    }
+}
+
+@include media_max_770 {
+    .wrap {
+        height:40vw;
+    }
+}
+
+@include media_max_460 {
+    .wrap {
+        height:180px;
+
+        & > .btns {
+            bottom:0;
         }
     }
 }

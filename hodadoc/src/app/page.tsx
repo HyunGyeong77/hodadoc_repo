@@ -1,5 +1,5 @@
 import {Metadata} from 'next';
-import MainSections from '@layout/MainSections';
+import MainSections from '@layout/page/MainSections';
 
 export const metadata: Metadata = {
   title: "HODADOC",

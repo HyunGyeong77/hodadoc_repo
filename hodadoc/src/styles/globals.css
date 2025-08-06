@@ -4,6 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --overflowY: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +25,7 @@ body {
   font-family: 'MaplestoryOTFLight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: var(--overflowY);
 }
 
 * {

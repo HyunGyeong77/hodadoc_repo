@@ -1,38 +1,48 @@
+"use client";
+
 import styles from 'styles/css/header.module.css';
+import sidebar_styles from 'styles/css/sidebar.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import {text} from 'services/header';
+import HeaderSearch from '@common/HeaderSearch';
 
 function Header() {
+
+    const hamburger_onClick = () => {
+        const target = document.getElementById("sidebar") as HTMLElement;
+        const body = document.querySelector("body") as HTMLBodyElement;
+
+        target.classList.add(sidebar_styles.active);
+        body.style.setProperty("--overflowY", "hidden");
+    }
+
     return (
         <header className={styles.header}>
             <div className="container">
                 <div className="layout">
                     <div className={styles.top}>
                         <div className={styles.logo}>
-                            <Link href="">
+                            <Link href="/">
                                 <Image src={"/images/logo.png"} alt="logo" width={90} height={60} priority={true} />
                             </Link>
                         </div>
-                        <form className={styles.search} action="">
-                            <label htmlFor="search" />
-                            <input id="search" type="text" placeholder="이 병원을 찾고 싶어요!" />
-                            <button type="submit">
-                                <Image src={"/icons/search.svg"} alt="search" width={40} height={64} />
-                            </button>
-                        </form> 
+                        <HeaderSearch />
                         <div className={styles.login}>
-                            <Link href="">로그인</Link>
-                            <Link href="">회원가입</Link>
+                            <Link href="">{text.user[0]}</Link>
+                            <Link href="">{text.user[1]}</Link>
                         </div>
-                        <button type="button" className={styles.menu}>
+                        <button type="button" className={styles.menu} onClick={hamburger_onClick}>
                             <Image src={"/images/menu-button.png"} alt="menu" width={128} height={128} />
                         </button>
                     </div>
                     <nav className={styles.btm}>
                         <ul>
-                            <li><Link href="#">추천 병원</Link></li>
-                            <li><Link href="#">의료 뉴스</Link></li>
-                            <li><Link href="#">고객 지원</Link></li>
+                            {text.menu.map((item, index) => (
+                                <li key={item + index}>
+                                    <Link href={text.link[index]}>{item}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </nav>
                 </div>
