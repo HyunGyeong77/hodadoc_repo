@@ -6,6 +6,7 @@ import Link from 'next/link';
 import {useEffect} from 'react';
 import {text} from 'services/vaccin';
 import {animationObserver} from '@utils/animationObserver';
+import {preventDefault} from '@utils/preventDefault';
 
 function Vaccin() {
     useEffect(() => {
@@ -30,7 +31,7 @@ function Vaccin() {
                             <ul>
                                 {text.content.map((item, index) => (
                                     <li key={index}>
-                                        <Link href="#">
+                                        <Link href="#" onClick={(e) => preventDefault(e)}>
                                             <div>
                                                 <Image src={text.image[index]} alt={text.image[index]} width={200} height={300} />
                                             </div>

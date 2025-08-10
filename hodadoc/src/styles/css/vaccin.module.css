@@ -25,12 +25,12 @@
   height: 400px;
 }
 .section > div > div > .wrap > .left.active > img {
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_img_xMove 0.8s ease forwards;
   animation-delay: 0.8s;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_img_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -61,12 +61,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(6) {
   --delay: 0.1s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element2_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element2_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -80,12 +80,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(5) {
   --delay: 0.2s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element3_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element3_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -99,12 +99,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(4) {
   --delay: 0.3s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element4_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element4_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -118,12 +118,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(3) {
   --delay: 0.4s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element5_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element5_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -137,12 +137,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(2) {
   --delay: 0.5s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element6_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element6_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -156,12 +156,12 @@
 }
 .section > div > div > .wrap > .right > ul > li.active:nth-child(1) {
   --delay: 0.6s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: vaccin_element7_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes vaccin_element7_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -260,12 +260,12 @@
     height: auto;
   }
   .section > div > div > .wrap > .left.active > img {
-    animation: anim_up_down 1.5s ease forwards;
+    animation: vaccin_img_upDown 1.5s ease forwards;
     animation-delay: 0;
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_img_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -284,13 +284,14 @@
   .section > div > div > .wrap > .right > ul > li {
     --delay:0;
   }
-  .section > div > div > .wrap > .right > ul > li.active:first-child {
-    animation: anim_up_down 0.5s ease forwards;
-    animation-delay: 0;
+  .section > div > div > .wrap > .right > ul > li.active:nth-child(1) {
+    --delay:0s;
+    animation: vaccin_element1_upDown 0.5s ease forwards;
+    animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element1_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -304,12 +305,12 @@
   }
   .section > div > div > .wrap > .right > ul > li.active:nth-child(2) {
     --delay:0.1s;
-    animation: anim_up_down 0.5s ease forwards;
+    animation: vaccin_element2_upDown 0.5s ease forwards;
     animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element2_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -323,12 +324,12 @@
   }
   .section > div > div > .wrap > .right > ul > li.active:nth-child(3) {
     --delay:0.2s;
-    animation: anim_up_down 0.5s ease forwards;
+    animation: vaccin_element3_upDown 0.5s ease forwards;
     animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element3_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -342,12 +343,12 @@
   }
   .section > div > div > .wrap > .right > ul > li.active:nth-child(4) {
     --delay:0.3s;
-    animation: anim_up_down 0.5s ease forwards;
+    animation: vaccin_element4_upDown 0.5s ease forwards;
     animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element4_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -361,12 +362,12 @@
   }
   .section > div > div > .wrap > .right > ul > li.active:nth-child(5) {
     --delay:0.4s;
-    animation: anim_up_down 0.5s ease forwards;
+    animation: vaccin_element5_upDown 0.5s ease forwards;
     animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element5_upDown {
     from {
       opacity: 0;
       visibility: hidden;
@@ -380,12 +381,12 @@
   }
   .section > div > div > .wrap > .right > ul > li.active:nth-child(6) {
     --delay:0.5s;
-    animation: anim_up_down 0.5s ease forwards;
+    animation: vaccin_element6_upDown 0.5s ease forwards;
     animation-delay: var(--delay);
     opacity: 0;
     visibility: hidden;
   }
-  @keyframes anim_up_down {
+  @keyframes vaccin_element6_upDown {
     from {
       opacity: 0;
       visibility: hidden;

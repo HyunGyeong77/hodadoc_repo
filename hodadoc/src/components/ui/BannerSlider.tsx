@@ -5,6 +5,7 @@ import {text} from 'services/bannerSlider';
 import Link from 'next/link';
 import Image from 'next/image';
 import {useEffect, useRef, useState} from 'react';
+import {preventDefault} from '@utils/preventDefault';
 
 import { FaCircle as BtnIcon } from "react-icons/fa";
 import { IoIosArrowBack as LeftArrow } from "react-icons/io";
@@ -168,14 +169,12 @@ function BannerSlider() {
 
     return (
         <div ref={wrapRef} className={styles.wrap}>
-            <div>
-                <button onClick={arrow_onClick("left")}>
-                    <LeftArrow className={styles.arrowIcon} />
-                </button>
-                <button onClick={arrow_onClick("right")}>
-                    <RightArrow className={styles.arrowIcon} />
-                </button>
-            </div>
+            <button onClick={arrow_onClick("left")}>
+                <LeftArrow className={styles.arrowIcon} />
+            </button>
+            <button onClick={arrow_onClick("right")}>
+                <RightArrow className={styles.arrowIcon} />
+            </button>
             <nav ref={btnsRef} className={styles.btns}>
                 <ul>
                     {text.imgs.slice(1, text.imgs.length - 1).map((item, index) => (
@@ -191,7 +190,7 @@ function BannerSlider() {
                 <ul>
                     {text.imgs.map((item, index) => (
                         <li key={item + index}>
-                            <Link href="#">
+                            <Link href="#" onClick={(e) => preventDefault(e)}>
                                 <Image src={`/images/${item}`} alt={item} width={866} height={300} priority={true} />
                             </Link>
                         </li>

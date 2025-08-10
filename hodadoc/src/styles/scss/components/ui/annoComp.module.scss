@@ -46,7 +46,7 @@
             }
         }
 
-        & > button {
+        & > a {
             & > .plusIcon {
                 font-size:1.5rem;
                 opacity:70%;
@@ -127,7 +127,7 @@
                 }
             }
 
-            & > button > .plusIcon {
+            & > a > .plusIcon {
                 font-size:1rem;
             }
         }

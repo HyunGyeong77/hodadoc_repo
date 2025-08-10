@@ -29,12 +29,12 @@
   transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
 }
 .wrap > div.active:first-child {
-  animation: anim_up_down 0.7s ease forwards;
+  animation: anno_left_upDown 0.7s ease forwards;
   animation-delay: 0;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_up_down {
+@keyframes anno_left_upDown {
   from {
     opacity: 0;
     visibility: hidden;
@@ -53,12 +53,12 @@
   transition-delay: 0.5s;
 }
 .wrap > div.active:last-child {
-  animation: anim_up_down 1s ease forwards;
+  animation: anno_right_upDown 1s ease forwards;
   animation-delay: 0.5s;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_up_down {
+@keyframes anno_right_upDown {
   from {
     opacity: 0;
     visibility: hidden;

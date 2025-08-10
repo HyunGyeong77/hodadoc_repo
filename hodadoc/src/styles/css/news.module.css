@@ -1,5 +1,5 @@
 .wrap {
-  animation: anim_up_down 1s ease forwards;
+  animation: news_wrap_upDown 1s ease forwards;
   animation-delay: 0.4s;
   opacity: 0;
   visibility: hidden;
@@ -15,7 +15,7 @@
   box-sizing: border-box;
   white-space: nowrap;
 }
-@keyframes anim_up_down {
+@keyframes news_wrap_upDown {
   from {
     opacity: 0;
     visibility: hidden;

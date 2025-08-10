@@ -1,5 +1,5 @@
-@mixin anim_up_down($translateY, $duration, $delay) {
-    @keyframes anim_up_down {
+@mixin anim_up_down($name, $translateY, $duration, $delay) {
+    @keyframes #{$name} {
         from {
             opacity:0;
             visibility:hidden;
@@ -11,14 +11,14 @@
         }
     }
 
-    animation:anim_up_down $duration ease forwards;
+    animation:$name $duration ease forwards;
     animation-delay:$delay;
     opacity:0;
     visibility:hidden;
 }
 
-@mixin anim_x_move($translateX, $duration, $delay) {
-    @keyframes anim_x_move {
+@mixin anim_x_move($name, $translateX, $duration, $delay) {
+    @keyframes #{$name} {
         from {
             opacity:0;
             visibility:hidden;
@@ -31,14 +31,14 @@
         }
     }
 
-    animation:anim_x_move $duration ease forwards;
+    animation:$name $duration ease forwards;
     animation-delay:$delay;
     opacity:0;
     visibility:hidden;
 }
 
-@mixin anim_visible($duration) {
-    @keyframes anim_visible {
+@mixin anim_visible($name, $duration) {
+    @keyframes #{$name} {
         from {
             opacity:0;
             visibility:hidden;
@@ -48,5 +48,5 @@
         }
     }
 
-    animation:anim_visible $duration ease forwards;
+    animation:$name $duration ease forwards;
 }

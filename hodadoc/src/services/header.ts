@@ -10,7 +10,7 @@ export const text = {
     ],
     link: [
         "/suggest",
-        "",
+        "/medinews",
         ""
     ]
 }

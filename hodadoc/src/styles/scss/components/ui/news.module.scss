@@ -2,7 +2,7 @@
 @use '../../animations' as *;
 
 .wrap {
-    @include anim_up_down(-60px, 1s, 0.4s);
+    @include anim_up_down(news_wrap_upDown, -60px, 1s, 0.4s);
     display:flex;
     flex-direction:column;
     gap:2.5rem;

@@ -13,12 +13,12 @@
   font-size: 3rem;
 }
 .wrap > h2.active {
-  animation: anim_up_down 1s ease forwards;
+  animation: healthCheckup_title_upDown 1s ease forwards;
   animation-delay: 0;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_up_down {
+@keyframes healthCheckup_title_upDown {
   from {
     opacity: 0;
     visibility: hidden;
@@ -43,12 +43,12 @@
   visibility: hidden;
 }
 .wrap > .btm > .left.active, .wrap > .btm > .right.active {
-  animation: anim_up_down 1s ease forwards;
+  animation: healthCheckup_btm_upDown 1s ease forwards;
   animation-delay: 0;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_up_down {
+@keyframes healthCheckup_btm_upDown {
   from {
     opacity: 0;
     visibility: hidden;

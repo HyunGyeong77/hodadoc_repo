@@ -34,7 +34,7 @@
             & > .left {
                 &.active {
                     & > img {
-                        @include anim_x_move(50px, 0.8s, 0.8s);
+                        @include anim_x_move(vaccin_img_xMove, 50px, 0.8s, 0.8s);
                     }
                 }
 
@@ -62,7 +62,7 @@
                                 &:nth-child(#{$rev}) {
                                     --delay: #{($i - 1) * 0.1}s;
 
-                                    @include anim_x_move(50px, 0.8s, var(--delay));
+                                    @include anim_x_move(vaccin_element#{$i}_xMove, 50px, 0.8s, var(--delay));
                                 }
                             }
                         }
@@ -174,7 +174,7 @@
 
                         &.active {
                             & > img {
-                                @include anim_up_down(-60px, 1.5s, 0);
+                                @include anim_up_down(vaccin_img_upDown, -60px, 1.5s, 0);
                             }
                         }
                     }
@@ -188,14 +188,10 @@
                                 --delay:0;
 
                                 &.active {
-                                    &:first-child {
-                                        @include anim_up_down(-50px, 0.5s, 0);
-                                    }
-
-                                    @for $i from 2 through 6 {
+                                    @for $i from 1 through 6 {
                                         &:nth-child(#{$i}) {
                                             --delay:#{($i - 1) * 0.1}s;
-                                            @include anim_up_down(-50px, 0.5s, var(--delay));
+                                            @include anim_up_down(vaccin_element#{$i}_upDown, -50px, 0.5s, var(--delay));
                                         }
                                     }
                                 }

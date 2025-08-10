@@ -112,6 +112,8 @@ function Search() {
     }
 
     const searchBtn_onClick = () => {
+        if(!isSearch) return;
+        
         const imgs = document.querySelector(".imgs") as HTMLImageElement;
 
         window.scrollTo({
@@ -131,6 +133,12 @@ function Search() {
 
         setMoreText(moreNumber === 1 ? "접기" : "더보기");
         setMoreNumber(moreNumber === 1 ? 2 : 1);
+
+        if(moreNumber === 2) {
+            const imgs = document.querySelector(".imgs") as HTMLElement;
+
+            window.scrollTo({top: imgs.offsetTop});
+        }
     }
 
     return (
@@ -269,7 +277,7 @@ function Search() {
                                 {Object.values(text.searchImg).map((item, index) => (
                                     <li key={index} className={index > 5 ? "moreList" : ""}>
                                         <article>
-                                            <Image src={item[0]} alt="random_img" width={400} height={180} />
+                                            <Image src={item[0]} alt={item[0]} width={400} height={180} />
                                         </article>
                                         <article>
                                             <p>{item[1]}</p>

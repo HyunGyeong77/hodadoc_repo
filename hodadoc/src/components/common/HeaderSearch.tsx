@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function HeaderSearch() {
     return (
-        <form className={styles.search} action="">
+        <form className={styles.search} action="" method="POST">
             <label htmlFor="search" />
             <input id="search" type="text" placeholder="이 병원을 찾고 싶어요!" />
             <button type="submit">

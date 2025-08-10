@@ -10,7 +10,7 @@
     gap:3rem;
 
     & > .sticky {
-        @include anim_up_down(-60px, 1s, 0.8s);
+        @include anim_up_down(search_sticky_upDown, -60px, 1s, 0.8s);
         position:absolute;
         right:-10vw;
         width:10%;
@@ -75,7 +75,7 @@
     }
 
     & > .search {
-        @include anim_up_down(-60px, 1s, 0.6s);
+        @include anim_up_down(search_search_upDown, -60px, 1s, 0.6s);
         background:$light-green;
         padding-block:2rem;
         border:1px solid $black;
@@ -347,17 +347,17 @@
                 transition:transform 0.2s;
 
                 &.active {
-                    --delay:0s;
+                    &:nth-child(3n + 1) {
+                        @include anim_up_down(search_imgs_upDown, -60px, 0.4s, 0);
+                    }
 
                     &:nth-child(3n + 2) {
-                        --delay:0.1s;
+                        @include anim_up_down(search_imgs_upDown2, -60px, 0.4s, 0.1s);
                     }
 
                     &:nth-child(3n) {
-                        --delay:0.2s;
+                        @include anim_up_down(search_imgs_upDown3, -60px, 0.4s, 0.2s);
                     }
-
-                    @include anim_up_down(-60px, 0.4s, var(--delay));
                 }
 
                 &:hover {
@@ -532,18 +532,13 @@
 
 @include media_max_1670 {
     .wrap > .imgs > ul > li.active {
-        --delay:0s;
-
-        &:nth-child(3n + 2),
-        &:nth-child(3n) {
-            --delay:0s;
+        &:nth-child(odd) {
+            @include anim_up_down(search_search_upDown, -60px, 0.4s, 0s);
         }
 
-        &:nth-child(2n) {
-            --delay:0.1s;
+        &:nth-child(even) {
+            @include anim_up_down(search_imgs_upDown2, -60px, 0.4s, 0.1s);
         }
-
-        @include anim_up_down(-60px, 0.4s, var(--delay));
     }
 }
 
@@ -569,15 +564,7 @@
             width:100%;
 
             &.active {
-                --delay:0s;
-
-                &:nth-child(3n + 2),
-                &:nth-child(3n),
-                &:nth-child(2n) {
-                    --delay:0s;
-                }
-
-                @include anim_up_down(-60px, 0.4s, var(--delay));
+                @include anim_up_down(search_search_upDown, -60px, 0.4s, 0);
             }
 
             & > article:first-child {

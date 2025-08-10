@@ -51,6 +51,12 @@
 .footer > div > div > .right > .top:hover {
   color: #00AD56;
 }
+.footer > div > div > .right > .top.hide {
+  display: none;
+}
+.footer > div > div > .right > .top.hide + .btm {
+  margin-top: auto;
+}
 .footer > div > div > .right > .top > p {
   font-size: 1.2rem;
 }

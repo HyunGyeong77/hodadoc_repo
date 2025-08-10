@@ -4,6 +4,7 @@ import styles from 'styles/css/cafeFavored.module.css';
 import {text} from 'services/cafeFavored';
 import Link from 'next/link';
 import {useRef, useEffect} from 'react';
+import {preventDefault} from '@utils/preventDefault';
 
 function CafeFavored() {
     const menuRef = useRef<HTMLUListElement>(null);
@@ -45,13 +46,13 @@ function CafeFavored() {
                         <ul ref={menuRef}>
                             {text.content.map((item, index) => (
                                 <li key={item + index}>
-                                    <Link href="#"><p>{item}</p></Link>
+                                    <Link href="#" onClick={(e) => preventDefault(e)}><p>{item}</p></Link>
                                 </li>
                             ))}
                         </ul>
                     </nav>
                 </div>
-                <Link href="#">카페 홈</Link>
+                <Link href="#" onClick={(e) => preventDefault(e)}>카페 홈</Link>
             </div>
         </div>
     );

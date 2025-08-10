@@ -41,14 +41,14 @@
                     --delay:0;
 
                     &:first-child {
-                        @include anim_x_move(-60px, 0.8s, 0);
+                        @include anim_x_move(healthInfo_img_xMove, -60px, 0.8s, 0);
                     }
 
                     @for $i from 2 through 8 {
                         &:nth-child(#{$i}) {
                             --delay: #{($i - 1) * 0.1}s;
 
-                            @include anim_x_move(-60px, 0.8s, var(--delay));
+                            @include anim_x_move(healthInfo_element#{$i}_xMove, -60px, 0.8s, var(--delay));
                         }
                     }
                 }

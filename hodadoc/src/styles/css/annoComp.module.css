@@ -37,7 +37,7 @@
   font-weight: bold;
   transform: translateY(-2px);
 }
-.anno > .top > button > .plusIcon {
+.anno > .top > a > .plusIcon {
   font-size: 1.5rem;
   opacity: 70%;
   height: 100%;
@@ -106,7 +106,7 @@
   .anno > .top > div > p {
     font-size: 0.9rem;
   }
-  .anno > .top > button > .plusIcon {
+  .anno > .top > a > .plusIcon {
     font-size: 1rem;
   }
   .anno > .btm > ul > li > a {

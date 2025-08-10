@@ -34,12 +34,12 @@
   --delay:0;
 }
 .wrap > .right > nav > ul.active > li:first-child {
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_img_xMove 0.8s ease forwards;
   animation-delay: 0;
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_img_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -53,12 +53,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(2) {
   --delay: 0.1s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element2_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element2_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -72,12 +72,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(3) {
   --delay: 0.2s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element3_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element3_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -91,12 +91,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(4) {
   --delay: 0.3s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element4_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element4_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -110,12 +110,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(5) {
   --delay: 0.4s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element5_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element5_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -129,12 +129,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(6) {
   --delay: 0.5s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element6_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element6_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -148,12 +148,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(7) {
   --delay: 0.6s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element7_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element7_xMove {
   from {
     opacity: 0;
     visibility: hidden;
@@ -167,12 +167,12 @@
 }
 .wrap > .right > nav > ul.active > li:nth-child(8) {
   --delay: 0.7s;
-  animation: anim_x_move 0.8s ease forwards;
+  animation: healthInfo_element8_xMove 0.8s ease forwards;
   animation-delay: var(--delay);
   opacity: 0;
   visibility: hidden;
 }
-@keyframes anim_x_move {
+@keyframes healthInfo_element8_xMove {
   from {
     opacity: 0;
     visibility: hidden;

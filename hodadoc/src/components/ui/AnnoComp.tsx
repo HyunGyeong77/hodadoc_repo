@@ -1,6 +1,9 @@
+"use client";
+
 import styles from 'styles/css/annoComp.module.css';
 import {AnnoProps} from 'types/annoProps';
 import Link from 'next/link';
+import {preventDefault} from '@utils/preventDefault';
 
 import { HiMiniSlash as SlashIcon } from "react-icons/hi2";
 import { ImPlus as PlusIcon } from "react-icons/im";
@@ -14,15 +17,15 @@ function AnnoComp({ text }: AnnoProps) {
                     <SlashIcon className={styles.slashIcon} />
                     <p>{text.title[1]}</p>
                 </div>
-                <button>
+                <Link href="#" onClick={(e) => preventDefault(e)}>
                     <PlusIcon className={styles.plusIcon} />
-                </button>
+                </Link>
             </div>
             <nav className={styles.btm}>
                 <ul>
                     {text.content.map((item, index) => (
                         <li key={item[0] + index}>
-                            <Link href="#">
+                            <Link href="#" onClick={(e) => preventDefault(e)}>
                                 <span>{item[0]}</span>
                                 <span>[{item[1]}]</span>
                             </Link>

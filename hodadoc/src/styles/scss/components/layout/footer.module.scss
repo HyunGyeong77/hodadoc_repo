@@ -68,6 +68,14 @@
                     &:hover {
                         color:$dark-green;
                     }
+
+                    &.hide {
+                        display:none;
+
+                        & + .btm {
+                            margin-top:auto;
+                        }
+                    }
                     
                     & > p {
                         font-size:1.2rem;

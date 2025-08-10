@@ -1,6 +1,196 @@
-.section > div > div {
-  padding-block: 0;
-}
 .section > div > div > .wrap {
-  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 150px;
+}
+.section > div > div > .wrap > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section > div > div > .wrap > div.active {
+  animation: suggest_top_upDown 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes suggest_top_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.section > div > div > .wrap > div > h2 > span:first-child {
+  position: relative;
+}
+.section > div > div > .wrap > div > h2 > span:first-child::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  background: #00CC66;
+  opacity: 50%;
+  z-index: -1;
+}
+.section > div > div > .wrap > div > h2 > span:last-child {
+  font-weight: lighter;
+}
+.section > div > div > .wrap > div > nav > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+.section > div > div > .wrap > div > nav > ul > li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.section > div > div > .wrap > div > nav > ul > li > button {
+  width: 70%;
+  height: clamp(3rem, 5.2vw, 4.5rem);
+  font-size: clamp(0.8rem, 1.5vw, 1.3rem);
+  border: 1px solid black;
+  border-radius: clamp(10px, 1.2vw, 15px);
+}
+.section > div > div > .wrap > div > nav > ul > li > button.active, .section > div > div > .wrap > div > nav > ul > li > button:hover {
+  font-weight: bold;
+  border: 2px solid #00AD56;
+  color: #00AD56;
+}
+.section > div > div > .wrap > nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5rem;
+  justify-items: center;
+}
+.section > div > div > .wrap > nav > ul {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.section > div > div > .wrap > nav > ul.active {
+  animation: suggest_element_upDown 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes suggest_element_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-70px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.section > div > div > .wrap > nav > ul > li.title, .section > div > div > .wrap > nav > ul > li.addr {
+  display: flex;
+  justify-content: space-between;
+}
+.section > div > div > .wrap > nav > ul > li:not(:first-child) {
+  padding-inline: 1rem;
+}
+.section > div > div > .wrap > nav > ul > li:not(:nth-child(2)) {
+  padding-top: 1rem;
+}
+.section > div > div > .wrap > nav > ul > li.addr > p, .section > div > div > .wrap > nav > ul > li.type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.section > div > div > .wrap > nav > ul > li.addr > p > span:first-child, .section > div > div > .wrap > nav > ul > li.type > p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+.section > div > div > .wrap > nav > ul > li.image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: clamp(130px, 14.2vw, 205px);
+}
+.section > div > div > .wrap > nav > ul > li.image > img {
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section > div > div > .wrap > nav > ul > li.title {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.section > div > div > .wrap > nav > ul > li.title > p, .section > div > div > .wrap > nav > ul > li.title > ul > li > p {
+  font-size: 1.5rem;
+}
+.section > div > div > .wrap > nav > ul > li.title > ul {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.section > div > div > .wrap > nav > ul > li.addr {
+  margin-bottom: 1.5rem;
+}
+.section > div > div > .wrap > nav > ul > li.addr > p > span {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.section > div > div > .wrap > nav > ul > li.addr > p > span > .markIcon {
+  color: red;
+}
+.section > div > div > .wrap > nav > ul > li.addr > button {
+  border: 1px solid black;
+  padding-inline: 0.5rem;
+  transition: color 0.2s;
+}
+.section > div > div > .wrap > nav > ul > li.addr > button:hover {
+  font-weight: bold;
+}
+.section > div > div > .wrap > nav > ul > li.type > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.section > div > div > .wrap > nav > ul > li.type > ul > li {
+  border: 1px solid #00AD56;
+  border-radius: 20px;
+  padding-block: 0.3rem;
+  padding-inline: 0.5rem;
+}
+.section > div > div > .wrap > nav > ul > li.website {
+  margin-left: auto;
+}
+.section > div > div > .wrap > nav > ul > li.website > a {
+  display: flex;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 0.2rem;
+}
+.section > div > div > .wrap > nav > ul > li.website > a, .section > div > div > .wrap > nav > ul > li.website > a > .earthIcon {
+  transition: color 0.2s;
+}
+.section > div > div > .wrap > nav > ul > li.website > a:hover, .section > div > div > .wrap > nav > ul > li.website > a:hover > .earthIcon {
+  color: #00AD56;
 }

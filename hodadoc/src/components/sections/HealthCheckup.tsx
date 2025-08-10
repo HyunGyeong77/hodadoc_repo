@@ -7,6 +7,7 @@ import {animationObserver} from '@utils/animationObserver';
 import NextImage from 'next/image';
 import Link from 'next/link';
 import {ColorMapType} from 'types/healthCheckupProps';
+import {preventDefault} from '@utils/preventDefault';
 
 import { BsWindow as WindowIcon } from "react-icons/bs";
 import { BiCurrentLocation as NaviIcon } from "react-icons/bi";
@@ -191,10 +192,12 @@ function HealthCheckup() {
                                                             onClick={mapText_onClick(item[1], index)}>{item[0]}</button>
                                                     </li>
                                                     <li>
-                                                        <Link href="#" title={`${item[0].replace(/\(.*$/, '').trim()}지부 새창으로 열림`}>
+                                                        <Link href="#" title={`${item[0].replace(/\(.*$/, '').trim()}지부 새창으로 열림`}
+                                                            onClick={(e) => preventDefault(e)}>
                                                             <WindowIcon />
                                                         </Link>
-                                                        <Link href="#" title="오시는 길 새창으로 열림">
+                                                        <Link href="#" title="오시는 길 새창으로 열림"
+                                                            onClick={(e) => preventDefault(e)}>
                                                             <NaviIcon />
                                                         </Link>
                                                     </li>

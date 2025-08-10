@@ -3,10 +3,31 @@
 import styles from 'styles/css/footer.module.css';
 import {text} from 'services/footer';
 import Link from 'next/link';
+import {useRef, useEffect} from 'react';
+import {preventDefault} from '@utils/preventDefault';
 
 import { FaArrowAltCircleUp as ArrowUpIcon } from "react-icons/fa";
 
 function Footer() {
+    const linkRef = useRef<HTMLAnchorElement>(null);
+
+    useEffect(() => {
+        const popstateHandler = () => {
+            const linkRef_cur = linkRef.current as HTMLAnchorElement;
+            const boolean = window.location.pathname.length > 1 ? true : false;
+
+            linkRef_cur.classList.toggle(styles.hide, boolean);
+        }
+
+        popstateHandler();
+
+        window.addEventListener("popstate", popstateHandler);
+
+        return (() => {
+            window.removeEventListener("popstate", popstateHandler);
+        });
+    }, []);
+
     const search_onClick = (e: React.MouseEvent) => {
         e.preventDefault();
         const id_search = document.getElementById("search_section") as HTMLElement;
@@ -27,15 +48,15 @@ function Footer() {
                             <ul>
                                 {text.course.map((item, index) => (
                                     <li key={item + index}>
-                                        <Link href="#">{item}</Link>
+                                        <Link href="#" onClick={(e) => preventDefault(e)}>{item}</Link>
                                     </li>
                                 ))}
                             </ul>
                         </nav>
                     </div>
                     <div className={styles.right}>
-                        <Link href="#search_section" onClick={search_onClick} className={styles.top}>
-                            <p>{text.search}</p>
+                        <Link ref={linkRef} href="#search_section" onClick={search_onClick} className={styles.top}>
+                            <p>{text.href}</p>
                             <ArrowUpIcon className={styles.arrowUpIcon} />
                         </Link>
                         <div className={styles.btm}>

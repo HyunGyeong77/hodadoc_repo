@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {useState, useEffect} from 'react';
 import {animationObserver} from '@utils/animationObserver';
+import {preventDefault} from '@utils/preventDefault';
 
 function HealthInfo() {
     const [isImgChange, setIsImgChange] = useState(false);
@@ -47,7 +48,7 @@ function HealthInfo() {
                                 <ul>
                                     {text.right.map((item, index) => (
                                         <li key={item + index}>
-                                            <Link href="#">
+                                            <Link href="#" onClick={(e) => preventDefault(e)}>
                                                 <Image src={text.img[index]} alt={text.img[index]} width={70} height={70} />
                                                 <p>{item}</p>
                                             </Link>

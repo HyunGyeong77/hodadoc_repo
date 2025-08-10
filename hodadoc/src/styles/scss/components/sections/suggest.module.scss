@@ -1,11 +1,223 @@
-
+@use '../../variables' as *;
+@use '../../levels' as *;
+@use '../../animations' as *;
 
 .section > div {
     & > div {
-        padding-block:0;
-
         & > .wrap {
-            height:100dvh;
+            display:flex;
+            flex-direction:column;
+            gap:5rem;
+            padding-top:150px;
+
+            & > div {
+                display:flex;
+                flex-direction:column;
+                gap:3rem;
+
+                &.active {
+                    @include anim_up_down(suggest_top_upDown, -30px, 1s, 0);
+                }
+
+                & > h2 {
+                    & > span {
+                        &:first-child {
+                            position:relative;
+
+                            &::before {
+                                content:"";
+                                position:absolute;
+                                bottom:0;
+                                width:100%;
+                                height:12px;
+                                background:$light-green;
+                                opacity:50%;
+                                z-index:$index-back1;
+                            }
+                        }
+
+                        &:last-child {
+                            font-weight:lighter;
+                        }
+                    }
+                }
+
+                & > nav {
+                    & > ul {
+                        display:grid;
+                        grid-template-columns:repeat(4, 1fr);
+                        justify-items:center;
+                        justify-content:space-between;
+                        row-gap:2rem;
+
+                        & > li {
+                            display:flex;
+                            justify-content:center;
+                            width:100%;
+
+                            & > button {
+                                width:70%;
+                                height:clamp(3rem, 5.2vw, 4.5rem);
+                                font-size:clamp(0.8rem, 1.5vw, 1.3rem);
+                                border:1px solid $black;
+                                border-radius:clamp(10px, 1.2vw, 15px);
+
+                                &.active,
+                                &:hover {
+                                    font-weight:bold;
+                                    border:2px solid $dark-green;
+                                    color:$dark-green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > nav {
+                display:grid;
+                grid-template-columns:repeat(2, 1fr);
+                row-gap:5rem;
+                justify-items:center;
+
+                & > ul {
+                    display:flex;
+                    flex-direction:column;
+                    width:85%;
+                    padding-bottom:1rem;
+                    border:1px solid rgba(0, 0, 0, 0.3);
+                    border-radius:10px;
+                    overflow:hidden;
+
+                    &.active {
+                        @include anim_up_down(suggest_element_upDown, -70px, 1s, 0);
+                    }
+
+                    & > li {
+                        &.title,
+                        &.addr {
+                            display:flex;
+                            justify-content:space-between;
+                        }
+
+                        &:not(:first-child) {
+                            padding-inline:1rem;
+                        }
+
+                        &:not(:nth-child(2)) {
+                            padding-top:1rem;
+                        }
+
+                        &.addr > p,
+                        &.type {
+                            display:flex;
+                            flex-direction:column;
+                            gap:0.3rem;
+                        }
+
+                        &.addr > p > span:first-child,
+                        &.type > p {
+                            font-size:0.9rem;
+                            font-weight:bold;
+                            color:rgba(0, 0, 0, 0.5);
+                        }
+
+                        &.image {
+                            position:relative;
+                            display:flex;
+                            justify-content:center;
+                            height:clamp(130px, 14.2vw, 205px);
+
+                            & > img {
+                                position:absolute;
+                                top:0;
+                                width:auto;
+                                height:100%;
+                                object-fit:cover;
+                            }
+                        }
+
+                        &.title {
+                            display:flex;
+                            padding:1rem;
+                            border-top:1px solid rgba(0, 0, 0, 0.3);
+                            border-bottom:1px solid rgba(0, 0, 0, 0.3);
+
+                            & > p,
+                            & > ul > li > p {
+                                font-size:1.5rem;
+                            }
+
+                            & > ul {
+                                display:flex;
+                                align-items:flex-end;
+                                gap:0.5rem;
+                            }
+                        }
+
+                        &.addr {
+                            margin-bottom:1.5rem;
+
+                            & > p > span {
+                                display:flex;
+                                align-items:center;
+                                gap:0.2rem;
+
+                                & > .markIcon {
+                                    color:$red;
+                                }
+                            }
+
+                            & > button {
+                                border:1px solid $black;
+                                padding-inline:0.5rem;
+                                transition:color 0.2s;
+
+                                &:hover {
+                                    font-weight:bold;
+                                }
+                            }
+                        }
+
+                        &.type {
+                            & > ul {
+                                display:flex;
+                                flex-wrap:wrap;
+                                gap:0.5rem;
+
+                                & > li {
+                                    border:1px solid $dark-green;
+                                    border-radius:20px;
+                                    padding-block:0.3rem;
+                                    padding-inline:0.5rem;
+                                }
+                            }
+                        }
+
+                        &.website {
+                            margin-left:auto;
+                            & > a {
+                                display:flex;
+                                align-items:center;
+                                width:max-content;
+                                gap:0.2rem;
+
+                                &,
+                                & > .earthIcon {
+                                    transition:color 0.2s;
+                                }
+
+                                &:hover {
+                                    &,
+                                    & > .earthIcon {
+                                        color:$dark-green;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

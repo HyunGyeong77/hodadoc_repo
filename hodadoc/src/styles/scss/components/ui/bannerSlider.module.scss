@@ -4,7 +4,7 @@
 @use '../../media' as *;
 
 .wrap {
-    @include anim_up_down(-60px, 1s, 0);
+    @include anim_up_down(bannerSlider_wrap_upDown, -100px, 1s, 0);
     position:relative;
     display:flex;
     justify-content:center;
@@ -15,45 +15,36 @@
     overflow:hidden;
     transform:translateY(-60px);
 
-    & > div {
+    & > button {
         position:absolute;
-        top:0;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        width:85%;
-        height:100%;
-        z-index:$index_forward1;
+        @include anim_visible(bannerSlider_arrowBtn_visible, 1s);
+        top:40%;
+        border-radius:50%;
+        width:clamp(1rem, 3.7vw, 3.3rem);
+        height:clamp(1rem, 3.7vw, 3.3rem);
+        z-index:$index-forward1;
 
-        & > button {
-            @include anim_visible(1s);
-            top:40%;
-            border-radius:50%;
-            width:3.3rem;
-            height:3.3rem;
-    
-            &:first-child {
-                left:10%;
-            }
-    
-            &:nth-child(2) {
-                right:10%;
-            }
-    
-            & > .arrowIcon {
-                width:100%;
-                height:100%;
-                opacity:0.6;
-    
-                &:hover {
-                    opacity:1;
-                }
+        &:first-child {
+            left:10%;
+        }
+
+        &:nth-child(2) {
+            right:10%;
+        }
+
+        & > .arrowIcon {
+            width:100%;
+            height:100%;
+            opacity:0.6;
+
+            &:hover {
+                opacity:1;
             }
         }
     }
 
     & > .btns {
-        @include anim_visible(1s);
+        @include anim_visible(bannerSlider_btns_visible, 1s);
         position:absolute;
         left:0;
         width:100%;
@@ -109,19 +100,29 @@
 @include media_max_1160 {
     .wrap {
         height:30vw;
+
+        & > button {
+            width:clamp(1rem, 4.6vw, 3.3rem);
+            height:clamp(1rem, 4.6vw, 3.3rem);
+        }
     }
 }
 
 @include media_max_770 {
     .wrap {
         height:40vw;
+
+        & > button {
+            width:clamp(1rem, 6.9vw, 3.3rem);
+            height:clamp(1rem, 6.9vw, 3.3rem);
+        }
     }
 }
 
 @include media_max_460 {
     .wrap {
         border-radius:10px;
-        & > div > button {
+        & > button {
             top:15vw;
             width:11vw;
         }

@@ -13,7 +13,7 @@
         font-size:3rem;
 
         &.active {
-            @include anim_up_down(-60px, 1s, 0);
+            @include anim_up_down(healthCheckup_title_upDown, -60px, 1s, 0);
         }
 
         & > span {
@@ -33,7 +33,7 @@
             @include transparent;
 
             &.active {
-                @include anim_up_down(-40px, 1s, 0);
+                @include anim_up_down(healthCheckup_btm_upDown, -40px, 1s, 0);
             }
         }
 

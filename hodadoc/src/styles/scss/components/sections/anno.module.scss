@@ -35,7 +35,7 @@
         }
 
         &:first-child {
-            @include anim_up_down(-60px, 0.7s, 0);
+            @include anim_up_down(anno_left_upDown, -60px, 0.7s, 0);
             
             & > div {
                 transition-delay:0.3s;
@@ -47,7 +47,7 @@
         }
 
         &:last-child {
-            @include anim_up_down(-60px, 1s, 0.5s);
+            @include anim_up_down(anno_right_upDown, -60px, 1s, 0.5s);
             
             & > div {
                 transition-delay:0.8s;

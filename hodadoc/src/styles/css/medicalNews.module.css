@@ -1,0 +1,256 @@
+.wrap {
+  padding-top: 150px;
+  font-family: "Pretendard-Regular";
+}
+.wrap > .hero {
+  padding-block: 4rem;
+  padding-inline: 6rem;
+  box-shadow: 0 0 5px 2px rgba(185, 185, 185, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.wrap > .hero.active {
+  animation: medicalNews_hero_upDown 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_hero_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .hero.active > .left > h2 {
+  animation: medicalNews_hero_leftTitle_upDown 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_hero_leftTitle_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .hero.active > .left > div {
+  animation: medicalNews_hero_leftContent_upDown 1s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_hero_leftContent_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .hero.active > .right {
+  animation: medicalNews_hero_img_upDown 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_hero_img_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .hero, .wrap > .hero > .left > h2, .wrap > .hero > .left > div, .wrap > .hero > .right {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > .hero > .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  word-break: keep-all;
+}
+.wrap > .hero > .left > h2 {
+  font-size: 3.7rem;
+  line-height: 1.1;
+}
+.wrap > .hero > .left > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.wrap > .hero > .left > div > p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #A1A1A1;
+}
+.wrap > .hero > .left > div > a {
+  padding-inline: 2.5rem;
+  padding-block: 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  background: #00CC66;
+  color: white;
+}
+.wrap > .hero > .right {
+  display: flex;
+  justify-content: center;
+  flex: 0.9;
+  height: 640px;
+  overflow: hidden;
+}
+.wrap > .mainNews, .wrap > .latestNews {
+  position: relative;
+  padding-block: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.wrap > .mainNews > h2, .wrap > .latestNews > h2 {
+  font-size: 2.5rem;
+}
+.wrap > .mainNews > div > div, .wrap > .latestNews > div > div {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrap > .mainNews::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: rgba(185, 185, 185, 0.3);
+  border-radius: 10px;
+}
+.wrap > .mainNews > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.wrap > .mainNews > div > div.active:nth-child(1) {
+  animation: medicalNews_mainNews_element1_upDown 1s ease forwards;
+  animation-delay: 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_mainNews_element1_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .mainNews > div > div.active:nth-child(2) {
+  animation: medicalNews_mainNews_element2_upDown 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_mainNews_element2_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .mainNews > div > div.active:nth-child(3) {
+  animation: medicalNews_mainNews_element3_upDown 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_mainNews_element3_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .latestNews > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.wrap > .latestNews > div > div:nth-child(2) > div:first-child > div, .wrap > .latestNews > div > div:nth-child(3) > div:first-child > div {
+  border-color: rgba(185, 185, 185, 0.7);
+}
+.wrap > .latestNews > div > div > div:last-child > div > p:last-child {
+  margin-top: auto;
+}
+.wrap > .latestNews > div > div.active:nth-child(odd) {
+  animation: medicalNews_latestNews_odd_upDown 1s ease forwards;
+  animation-delay: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_latestNews_odd_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.wrap > .latestNews > div > div.active:nth-child(even) {
+  animation: medicalNews_latestNews_even_upDown 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes medicalNews_latestNews_even_upDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

@@ -3,7 +3,7 @@
 /* max */
 /* //max */
 .wrap {
-  animation: anim_up_down 1s ease forwards;
+  animation: bannerSlider_wrap_upDown 1s ease forwards;
   animation-delay: 0;
   opacity: 0;
   visibility: hidden;
@@ -17,11 +17,11 @@
   overflow: hidden;
   transform: translateY(-60px);
 }
-@keyframes anim_up_down {
+@keyframes bannerSlider_wrap_upDown {
   from {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-60px);
+    transform: translateY(-100px);
   }
   to {
     opacity: 1;
@@ -29,24 +29,16 @@
     transform: translateY(0);
   }
 }
-.wrap > div {
+.wrap > button {
   position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  height: 100%;
-  z-index: 1;
-}
-.wrap > div > button {
-  animation: anim_visible 1s ease forwards;
+  animation: bannerSlider_arrowBtn_visible 1s ease forwards;
   top: 40%;
   border-radius: 50%;
-  width: 3.3rem;
-  height: 3.3rem;
+  width: clamp(1rem, 3.7vw, 3.3rem);
+  height: clamp(1rem, 3.7vw, 3.3rem);
+  z-index: 1;
 }
-@keyframes anim_visible {
+@keyframes bannerSlider_arrowBtn_visible {
   from {
     opacity: 0;
     visibility: hidden;
@@ -56,22 +48,22 @@
     visibility: visible;
   }
 }
-.wrap > div > button:first-child {
+.wrap > button:first-child {
   left: 10%;
 }
-.wrap > div > button:nth-child(2) {
+.wrap > button:nth-child(2) {
   right: 10%;
 }
-.wrap > div > button > .arrowIcon {
+.wrap > button > .arrowIcon {
   width: 100%;
   height: 100%;
   opacity: 0.6;
 }
-.wrap > div > button > .arrowIcon:hover {
+.wrap > button > .arrowIcon:hover {
   opacity: 1;
 }
 .wrap > .btns {
-  animation: anim_visible 1s ease forwards;
+  animation: bannerSlider_btns_visible 1s ease forwards;
   position: absolute;
   left: 0;
   width: 100%;
@@ -80,7 +72,7 @@
   bottom: 0.7rem;
   z-index: 1;
 }
-@keyframes anim_visible {
+@keyframes bannerSlider_btns_visible {
   from {
     opacity: 0;
     visibility: hidden;
@@ -126,17 +118,25 @@
   .wrap {
     height: 30vw;
   }
+  .wrap > button {
+    width: clamp(1rem, 4.6vw, 3.3rem);
+    height: clamp(1rem, 4.6vw, 3.3rem);
+  }
 }
 @media (max-width: 770px) {
   .wrap {
     height: 40vw;
+  }
+  .wrap > button {
+    width: clamp(1rem, 6.9vw, 3.3rem);
+    height: clamp(1rem, 6.9vw, 3.3rem);
   }
 }
 @media (max-width: 460px) {
   .wrap {
     border-radius: 10px;
   }
-  .wrap > div > button {
+  .wrap > button {
     top: 15vw;
     width: 11vw;
   }

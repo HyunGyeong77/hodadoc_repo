@@ -1,7 +1,7 @@
-import SuggestSection from '@layout/pages/SuggestPages';
+import SuggestPages from '@layout/pages/SuggestPages';
 
 export default function Suggest() {
     return (
-        <SuggestSection />
+        <SuggestPages />
     );
 }
